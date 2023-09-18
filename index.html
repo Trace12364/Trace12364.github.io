@@ -404,7 +404,7 @@
 <li>短路保护：LM2940具有短路保护功能，可以防止输出短路时对芯片造成损坏.</li>
 </ol>
 <h6 id="1-1-3-SP1N28STER电源芯片（Buck）"><a href="#1-1-3-SP1N28STER电源芯片（Buck）" class="headerlink" title="1.1.3 SP1N28STER电源芯片（Buck）"></a>1.1.3 SP1N28STER电源芯片（Buck）</h6><h4 id="1-2-关于纹波"><a href="#1-2-关于纹波" class="headerlink" title="1.2 关于纹波"></a>1.2 关于纹波</h4><h5 id="第一部分：输出电压纹波"><a href="#第一部分：输出电压纹波" class="headerlink" title="第一部分：输出电压纹波"></a>第一部分：输出电压纹波</h5><p>以Buck电路为例，由于寄生参数的影响，实际Buck电路的输出电压并非是稳定干净的直流电压，而是在直流电压上叠加了输出电压纹波和噪声，如图1所示。</p>
-<p><a target="_blank" rel="noopener" href="https://e2echina.ti.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-01-16/3858.1.png"><img src="/.com//硬件\硬件知识\图片资料\3858.1.png" alt=" "></a></p>
+<p><img src="https://e2echina.ti.com/resized-image/__size/2460x0/__key/communityserver-blogs-components-weblogfiles/00-00-00-01-16/3858.1.png" alt=" "></p>
 <center>图1. Buck 输出电压纹波和噪声</center>
 
 <p>实际输出电压纹波由电感电流与输出阻抗决定，由三部分组成，如图2 所示。</p>
@@ -413,11 +413,11 @@
 <li>输出电容的充放电</li>
 <li>寄生电感引起的电压突变</li>
 </ol>
-<p><a target="_blank" rel="noopener" href="https://e2echina.ti.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-01-16/0118.2.png"><img src="/.com//硬件\硬件知识\图片资料\0118.2.png" alt=" "></a></p>
+<p><img src="https://e2echina.ti.com/resized-image/__size/2460x0/__key/communityserver-blogs-components-weblogfiles/00-00-00-01-16/0118.2.png" alt=" "></p>
 <center>图2. 输出电压纹波的组成</center>
 
 <p>不同类型的输出电容，寄生参数的大小不同，三部分纹波所占的比例也有所不同。因此，使用不同类型的输出电容会得到不同波形的电压纹波。如图3所示，电解电容的ESR较大，纹波由ESR主导，波形与电感电流纹波形状类似。陶瓷电容的ESR和ESL都很小，主要由电容的充放电主导，纹波类似电容的充放电曲线。OSCON电容三者的影响都体现在纹波中。</p>
-<p><a target="_blank" rel="noopener" href="https://e2echina.ti.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-01-16/7026.3.png"><img src="/.com//硬件\硬件知识\图片资料\7026.3.png" alt=" "></a></p>
+<p><img src="https://e2echina.ti.com/resized-image/__size/2460x0/__key/communityserver-blogs-components-weblogfiles/00-00-00-01-16/7026.3.png" alt=" "></p>
 <center>图3. 不同类型输出电容的电压纹波</center>
 
 <h5 id="第二部分：输出电压纹波的测量"><a href="#第二部分：输出电压纹波的测量" class="headerlink" title="第二部分：输出电压纹波的测量"></a>第二部分：输出电压纹波的测量</h5><p>在测量输出电压纹波时，要注意如下几点，正确方式如图4所示。</p>
@@ -428,12 +428,13 @@
 <li>如果只关注开关频率分量纹波，建议打开示波器带宽限制</li>
 </ol>
 <p>如图5所示，左侧波形同时测量开关节点和输出电压纹波，带宽限制关闭。可以看到，输出电压纹波中的噪声较大，影响纹波的测量。</p>
-<p><a target="_blank" rel="noopener" href="https://e2echina.ti.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-01-16/5355.4.png"><img src="/.com//硬件\硬件知识\图片资料\5355.4.png" alt=" "></a></p>
+<p><img src="https://e2echina.ti.com/resized-image/__size/2460x0/__key/communityserver-blogs-components-weblogfiles/00-00-00-01-16/5355.4.png" alt=" "></p>
 <center>图4. 输出电压纹波测试方式</center>
 
-<p><a target="_blank" rel="noopener" href="https://e2echina.ti.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-01-16/3162.5.png"><img src="/.com//硬件\硬件知识\图片资料\3162.5.png" alt=" "></a></p>
+<p><img src="https://e2echina.ti.com/resized-image/__size/2460x0/__key/communityserver-blogs-components-weblogfiles/00-00-00-01-16/3162.5.png" alt=" "></p>
 <center>图5. 输出电压纹波测试对比</center>
 
+<p>转载不完整，详细请点开下方链接。</p>
 <p><a target="_blank" rel="noopener" href="https://e2echina.ti.com/blogs_/b/power_house/posts/53234">理解输出电压纹波和噪声一：输出电压纹波来源和抑制 - 电源管理 - 技术文章 - E2E™ 设计支持 (ti.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://e2echina.ti.com/blogs_/b/power_house/posts/53235">理解输出电压纹波和噪声二：高频噪声分量的来源和抑制 - 电源管理 - 技术文章 - E2E™ 设计支持 (ti.com)</a></p>
 <h3 id="2-H桥电机驱动电路"><a href="#2-H桥电机驱动电路" class="headerlink" title="2. H桥电机驱动电路"></a>2. H桥电机驱动电路</h3><p>虽然直流无刷电机加压后就可以转动，但是却存在着诸多问题，例如：不能够调节转速，可能会烧毁电机等等。目前控制直流有刷电机多采用全H桥电路驱动电机电路。使用H桥电路来控制直流有刷电机可以实现双向控制、调速控制、制动功能、PWM速度控制以及电流保护等优势，使得电机的控制更加灵活、可靠和精确。</p>
