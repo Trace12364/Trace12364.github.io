@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-17T04:22:30.720Z</updated>
+  <updated>2023-10-17T04:29:05.172Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,24 +21,16 @@
     <link href="http://example.com/2023/10/17/STM32-Study/"/>
     <id>http://example.com/2023/10/17/STM32-Study/</id>
     <published>2023-10-17T04:03:16.000Z</published>
-    <updated>2023-10-17T04:22:30.720Z</updated>
+    <updated>2023-10-17T04:29:05.172Z</updated>
     
-    <content type="html"><![CDATA[<p>1.1 F1系统架构</p><p>4个主动单元+4个被动单元</p><table><thead><tr><th>主动单元</th><th>被动单元</th></tr></thead><tbody><tr><td>Cortex-M3 DCode总线（D-Bus）</td><td>内部Flash</td></tr><tr><td>Cortex-M3内核 系统总线 （S-Bus）</td><td>内部SRAM</td></tr><tr><td>通用DMA1</td><td>FSMC</td></tr><tr><td>通用DMA2</td><td>AHB到APB的桥。它连接的所有APB外设</td></tr></tbody></table><p>AHB：高级高性能总线</p><p>APB：高级外围总线</p><p>互联型F1系列有所不同，有五个主动单元以及三个被动单元。</p>]]></content>
+    <content type="html"><![CDATA[<p>1.1 F1系统架构</p><p>Cortex-M内核&amp;芯片</p><p><img src="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/img1.png?raw=true" alt="1"></p><p>4个主动单元+4个被动单元</p><table><thead><tr><th>主动单元</th><th>被动单元</th></tr></thead><tbody><tr><td>Cortex-M3 DCode总线（D-Bus）</td><td>内部Flash</td></tr><tr><td>Cortex-M3内核 系统总线 （S-Bus）</td><td>内部SRAM</td></tr><tr><td>通用DMA1</td><td>FSMC</td></tr><tr><td>通用DMA2</td><td>AHB到APB的桥。它连接的所有APB外设</td></tr></tbody></table><p><img src="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/img2.png?raw=true" alt="2"></p><p>AHB：高级高性能总线</p><p>APB：高级外围总线</p><p>互联型F1系列有所不同，有五个主动单元以及三个被动单元。</p>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;1.1 F1系统架构&lt;/p&gt;
-&lt;p&gt;4个主动单元+4个被动单元&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;主动单元&lt;/th&gt;
-&lt;th&gt;被动单元&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;Cortex-M3 DCode总线（D-B</summary>
+&lt;p&gt;Cortex-M内核&amp;amp;芯片&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/img1.png?raw</summary>
       
     
     
