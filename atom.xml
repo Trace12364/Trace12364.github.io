@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-17T06:08:09.219Z</updated>
+  <updated>2023-10-17T06:27:07.050Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用CubeMX配置STM32启动文件</title>
+    <link href="http://example.com/2023/10/18/%E4%BD%BF%E7%94%A8CubeMX%E9%85%8D%E7%BD%AESTM32%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6/"/>
+    <id>http://example.com/2023/10/18/%E4%BD%BF%E7%94%A8CubeMX%E9%85%8D%E7%BD%AESTM32%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6/</id>
+    <published>2023-10-18T06:26:49.000Z</published>
+    <updated>2023-10-17T06:27:07.050Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>STM32_Study</title>
