@@ -30,8 +30,10 @@
 <meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/img1.png?raw=true">
 <meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/img2.png?raw=true">
 <meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/img3.png?raw=true">
+<meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/img4.png?raw=true">
+<meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/img5.png?raw=true">
 <meta property="article:published_time" content="2023-10-17T04:03:16.000Z">
-<meta property="article:modified_time" content="2023-10-17T08:21:31.742Z">
+<meta property="article:modified_time" content="2023-10-17T08:40:07.045Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="STM32">
 <meta property="article:tag" content="Study">
@@ -252,7 +254,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            322 words 
+            469 words 
           </div>
         </div>
         
@@ -264,31 +266,31 @@
           <p>This is a post to record my study of STM32.</p>
 <span id="more"></span>
 
-<p>Cortex-M内核&amp;芯片</p>
+<h1 id="1-STM32系统架构"><a href="#1-STM32系统架构" class="headerlink" title="1. STM32系统架构"></a>1. STM32系统架构</h1><p>Cortex-M内核&amp;芯片</p>
 <p><img src="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/img1.png?raw=true" alt="1"></p>
 <h3 id="1-1-F1系统架构"><a href="#1-1-F1系统架构" class="headerlink" title="1.1 F1系统架构"></a>1.1 F1系统架构</h3><p>4个主动单元+4个被动单元</p>
 <table>
 <thead>
 <tr>
-<th>主动单元</th>
-<th>被动单元</th>
+<th align="center">主动单元</th>
+<th align="center">被动单元</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Cortex-M3 DCode总线（D-Bus）</td>
-<td>内部Flash</td>
+<td align="center">Cortex-M3 DCode总线（D-Bus）</td>
+<td align="center">内部Flash</td>
 </tr>
 <tr>
-<td>Cortex-M3内核 系统总线 （S-Bus）</td>
-<td>内部SRAM</td>
+<td align="center">Cortex-M3内核 系统总线 （S-Bus）</td>
+<td align="center">内部SRAM</td>
 </tr>
 <tr>
-<td>通用DMA1</td>
-<td>FSMC</td>
+<td align="center">通用DMA1</td>
+<td align="center">FSMC</td>
 </tr>
 <tr>
-<td>通用DMA2</td>
-<td>AHB到APB的桥。它连接的所有APB外设</td>
+<td align="center">通用DMA2</td>
+<td align="center">AHB到APB的桥。它连接的所有APB外设</td>
 </tr>
 </tbody></table>
 <p><img src="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/img2.png?raw=true" alt="2"></p>
@@ -299,41 +301,41 @@
 <table>
 <thead>
 <tr>
-<th>主控总线</th>
-<th>被控总线</th>
+<th align="center">主控总线</th>
+<th align="center">被控总线</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Cortex-M4内核 I总线</td>
-<td>内部FLASH Icode 总线</td>
+<td align="center">Cortex-M4内核 I总线</td>
+<td align="center">内部FLASH Icode 总线</td>
 </tr>
 <tr>
-<td>Cortex-M4内核 D总线</td>
-<td>内部FLASH Dcode 总线</td>
+<td align="center">Cortex-M4内核 D总线</td>
+<td align="center">内部FLASH Dcode 总线</td>
 </tr>
 <tr>
-<td>Cortex-M4内核 S总线</td>
-<td>主要内部SRAM1（112KB）</td>
+<td align="center">Cortex-M4内核 S总线</td>
+<td align="center">主要内部SRAM1（112KB）</td>
 </tr>
 <tr>
-<td>DMA1存储器总线</td>
-<td>辅助内部SRAM2（16KB）</td>
+<td align="center">DMA1存储器总线</td>
+<td align="center">辅助内部SRAM2（16KB）</td>
 </tr>
 <tr>
-<td>DMA2存储器总线</td>
-<td>辅助内部SRAM3（64KB）（适用于F42xx和F43xx）</td>
+<td align="center">DMA2存储器总线</td>
+<td align="center">辅助内部SRAM3（64KB）（适用于F42xx和F43xx）</td>
 </tr>
 <tr>
-<td>DMA2外设总线</td>
-<td>AHB1外设（保凯AHB-APB总线桥和APB外设）</td>
+<td align="center">DMA2外设总线</td>
+<td align="center">AHB1外设（保凯AHB-APB总线桥和APB外设）</td>
 </tr>
 <tr>
-<td>以太网DMA总线</td>
-<td>AHB2外设</td>
+<td align="center">以太网DMA总线</td>
+<td align="center">AHB2外设</td>
 </tr>
 <tr>
-<td>USB OYG HS DMA总线</td>
-<td>FSMC</td>
+<td align="center">USB OYG HS DMA总线</td>
+<td align="center">FSMC</td>
 </tr>
 </tbody></table>
 <p><img src="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/img3.png?raw=true" alt="3"></p>
@@ -343,27 +345,75 @@
 <table>
 <thead>
 <tr>
-<th></th>
-<th>F407</th>
-<th>F429</th>
+<th align="center"></th>
+<th align="center">F407</th>
+<th align="center">F429</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>AHB1&#x2F;2</td>
-<td>168MHz</td>
-<td>180MHz</td>
+<td align="center">AHB1&#x2F;2</td>
+<td align="center">168MHz</td>
+<td align="center">180MHz</td>
 </tr>
 <tr>
-<td>APB1</td>
-<td>42MHz</td>
-<td>45MHz</td>
+<td align="center">APB1</td>
+<td align="center">42MHz</td>
+<td align="center">45MHz</td>
 </tr>
 <tr>
-<td>APB2</td>
-<td>84MHz</td>
-<td>90MHz</td>
+<td align="center">APB2</td>
+<td align="center">84MHz</td>
+<td align="center">90MHz</td>
 </tr>
 </tbody></table>
+<h1 id="2-STM32时钟系统"><a href="#2-STM32时钟系统" class="headerlink" title="2. STM32时钟系统"></a>2. STM32时钟系统</h1><p>简单来说，时钟是具有周期性的脉冲信号，最常用的是占空比50%的方波。时钟是单片机的脉搏，搞懂时钟走向及关系，对单片机使用至关重要！</p>
+<p><img src="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/img4.png?raw=true" alt="4"></p>
+<h3 id="2-1认识时钟树（F1）"><a href="#2-1认识时钟树（F1）" class="headerlink" title="2.1认识时钟树（F1）"></a>2.1认识时钟树（F1）</h3><p><img src="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/img5.png?raw=true" alt="5"></p>
+<table>
+<thead>
+<tr>
+<th>时钟源名称</th>
+<th>频率</th>
+<th>材料</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>高速外部振荡器(HSE)</td>
+<td>4~16MHz</td>
+<td>晶体&#x2F;陶瓷</td>
+<td>SYSCLK&#x2F;RTC</td>
+</tr>
+<tr>
+<td>低俗外部振荡器(LSE)</td>
+<td>32.768KHz</td>
+<td>晶体&#x2F;陶瓷</td>
+<td>RTC</td>
+</tr>
+<tr>
+<td>高速内部振荡器(HSI)</td>
+<td>8MHz</td>
+<td>RC</td>
+<td>SYSCLK</td>
+</tr>
+<tr>
+<td>低俗内部振荡器(LSI)</td>
+<td>40KHz</td>
+<td>RC</td>
+<td>RTC&#x2F;IWDG</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>H：high</th>
+<th>L：low</th>
+<th>S：speed</th>
+<th>I：internal</th>
+<th>E：external</th>
+</tr>
+</thead>
+</table>
 
         
       </div>
