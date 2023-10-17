@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-17T06:27:07.050Z</updated>
+  <updated>2023-10-17T06:31:37.040Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,11 +21,21 @@
     <link href="http://example.com/2023/10/18/%E4%BD%BF%E7%94%A8CubeMX%E9%85%8D%E7%BD%AESTM32%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6/"/>
     <id>http://example.com/2023/10/18/%E4%BD%BF%E7%94%A8CubeMX%E9%85%8D%E7%BD%AESTM32%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6/</id>
     <published>2023-10-18T06:26:49.000Z</published>
-    <updated>2023-10-17T06:27:07.050Z</updated>
+    <updated>2023-10-17T06:31:37.040Z</updated>
+    
+    <content type="html"><![CDATA[<p>STM32</p><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;STM32&lt;/p&gt;</summary>
     
     
     
     
+    <category term="STM32" scheme="http://example.com/tags/STM32/"/>
+    
+    <category term="时钟树" scheme="http://example.com/tags/%E6%97%B6%E9%92%9F%E6%A0%91/"/>
+    
+    <category term="CubeMX" scheme="http://example.com/tags/CubeMX/"/>
     
   </entry>
   
