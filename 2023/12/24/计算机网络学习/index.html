@@ -14,30 +14,23 @@
   
 
   
-  <title>使用CubeMX配置STM32启动文件 | Trace</title>
+  <title>计算机网络学习 | Trace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="本文将根据正点原子的视频教程，以STM32F103为例来介绍如何使用CubeMX创建一个你想要的配置好的工程。">
+  <meta name="description" content="一个孤独的人">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用CubeMX配置STM32启动文件">
-<meta property="og:url" content="http://example.com/2023/10/18/%E4%BD%BF%E7%94%A8CubeMX%E9%85%8D%E7%BD%AESTM32%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6/index.html">
+<meta property="og:title" content="计算机网络学习">
+<meta property="og:url" content="http://example.com/2023/12/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Trace">
-<meta property="og:description" content="本文将根据正点原子的视频教程，以STM32F103为例来介绍如何使用CubeMX创建一个你想要的配置好的工程。">
+<meta property="og:description" content="一个孤独的人">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/png1.png?raw=true">
-<meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/png2.png?raw=true">
-<meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/png3.png?raw=true">
-<meta property="article:published_time" content="2023-10-18T06:26:49.000Z">
-<meta property="article:modified_time" content="2023-10-28T07:30:17.931Z">
+<meta property="article:published_time" content="2023-12-24T01:21:52.000Z">
+<meta property="article:modified_time" content="2023-12-24T01:21:52.329Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="STM32">
-<meta property="article:tag" content="时钟树">
-<meta property="article:tag" content="CubeMX">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/png1.png?raw=true">
   
     <link rel="alternate" href="/atom.xml" title="Trace" type="application/atom+xml">
   
@@ -243,7 +236,7 @@
     <div id="content-body">
        
 
-<article id="post-使用CubeMX配置STM32启动文件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-计算机网络学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
    
@@ -256,7 +249,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        使用CubeMX配置STM32启动文件
+        计算机网络学习
       </h1>
     
   
@@ -264,7 +257,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-10-18T06:26:49.000Z" itemprop="datePublished">2023-10-18</time>
+  <time class="dt-published" datetime="2023-12-24T01:21:52.000Z" itemprop="datePublished">2023-12-24</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -275,33 +268,14 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            337 words 
+            0 words 
           </div>
         </div>
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CubeMX/" rel="tag">CubeMX</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/STM32/" rel="tag">STM32</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%B6%E9%92%9F%E6%A0%91/" rel="tag">时钟树</a></li></ul>
-
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>本文将根据<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1bv4y1R7dp?p=33&vd_source=fea1d16ac6dcda955ed588cc53d08106">正点原子的视频教程</a>，以STM32F103为例来介绍如何使用CubeMX创建一个你想要的配置好的工程。</p>
-<span id="more"></span>
-
-<h4 id="1、工程初步建立"><a href="#1、工程初步建立" class="headerlink" title="1、工程初步建立"></a>1、工程初步建立</h4><p>先新建一个文件夹📂来存放你要新建的工程。然后打开CubeMX，然后在上方任务栏中点击File选择New Project或者软件中央和的蓝色的ACCESS TO MCU SELECTOR都可。</p>
-<p><img src="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/png1.png?raw=true" alt="1"></p>
-<p>刚新建工程会要求下载一些东西，如果你已经下载了固件包并且放入仓库了，那么这时可以点击Cancel取消掉。</p>
-<h5 id="选择芯片型号"><a href="#选择芯片型号" class="headerlink" title="选择芯片型号"></a>选择芯片型号</h5><p>加载后就会出现这么一个界面</p>
-<p><img src="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/png2.png?raw=true" alt="png2"></p>
-<p>通过搜索之后就会出现如下，在右侧点击你要使用的单片机型号即可。</p>
-<p><img src="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/STM32/png3.png?raw=true" alt="png3"></p>
-<h4 id="2、时钟模块配置"><a href="#2、时钟模块配置" class="headerlink" title="2、时钟模块配置"></a>2、时钟模块配置</h4><p>设置HSE、LSE、MCO</p>
-<p>双击芯片型号之后就会出现以下界面，接下来就可以配置时钟，IO等了</p>
-<h4 id="3、时钟系统配置"><a href="#3、时钟系统配置" class="headerlink" title="3、时钟系统配置"></a>3、时钟系统配置</h4><p>PLL、SYSCLK、AHB、APB1、APB2等等</p>
-<h4 id="4、GPIO引脚配置"><a href="#4、GPIO引脚配置" class="headerlink" title="4、GPIO引脚配置"></a>4、GPIO引脚配置</h4><p>以连接在LED灯的IO口为例介绍如何配置</p>
-<h4 id="5、Cortex内核配置"><a href="#5、Cortex内核配置" class="headerlink" title="5、Cortex内核配置"></a>5、Cortex内核配置</h4><p>SYS（DEBUG）配置、NVIC（优先级分组）配置</p>
-<h4 id="6、生成工程源码"><a href="#6、生成工程源码" class="headerlink" title="6、生成工程源码"></a>6、生成工程源码</h4><p>设置工程，MDK等，最后生成代码工程</p>
-<h4 id="7、编写用户程序"><a href="#7、编写用户程序" class="headerlink" title="7、编写用户程序"></a>7、编写用户程序</h4><p>在main.c文件按预留的位置编写代码</p>
-
+          
         
       </div>
 
@@ -317,27 +291,22 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left "
-    
-      href="/2023/10/18/%E5%85%B3%E4%BA%8E%E7%A9%BF%E6%90%AD/"
-      title="关于穿搭"
+  <a class="article-nav-btn left  disabled "
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
-      
-        关于穿搭
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="/2023/10/17/STM32-Study/"
-      title="STM32_Study"
+      href="/2023/11/19/%E7%81%AF%E5%85%89%E7%94%BB/"
+      title="灯光画"
      >
 
     <p class="title-text">
       
-        STM32_Study
+        灯光画
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
