@@ -28,8 +28,9 @@
 <meta property="og:description" content="在九月份无意间在B站看到了灯光画之后，就萌生出了DIY一个的念头。当时B站视频里的灯光画大多都是使用USB-A接口，或者使用的电池盒来供电，并且购买的灯带，这样对于没有焊接经验的人来说确实方便。但是我却想进行一定的改装，将它变成Type-C接口，来适配大多数的情况。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/Light/Light1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/Light/Light2.png?raw=ture">
 <meta property="article:published_time" content="2023-11-19T03:25:25.000Z">
-<meta property="article:modified_time" content="2023-12-24T01:12:52.376Z">
+<meta property="article:modified_time" content="2023-12-24T01:18:23.136Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="个人DIY">
 <meta name="twitter:card" content="summary">
@@ -266,7 +267,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            529 words 
+            538 words 
           </div>
         </div>
         
@@ -284,6 +285,9 @@
 
 <p>但是第一版也暴露出许多问题来，最大的问题就是朋友吐槽虽然确实可以Type-C供电了，但是还是不够方便，于是我突然就有了增加一个充电电路，以及可充电的锂电池的想法，于是在不断的拖延中，托更的主要问题还是买错元器件了，于是耽误了十几天，但是终于在11月19号完成了。</p>
 <p>第二版的灯光画新增加了LED驱动电路，因为关于这部分的资料我在网上并没有找到太多，所以就根据立创商城的查找功能找到了一个合适的驱动芯片，同时根据datesheet设计了一个电路，所幸能够驱动起来。在此基础上，将灯由发光灯丝改为了5730灯珠。同时增加了TP4056充电保护电路。</p>
+<p><img src="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/Light/Light2.png?raw=ture" alt="2"></p>
+<center>灯光画原理图</center>
+
 <p>第一次焊接时发现白光和蓝光区别挺大，并且白光的色温越高越暖。因为我的底画是蓝色色调的，就想着焊一些蓝光进去，但是效果有点吓人。所以就换掉了，改为3000K色温的白光。</p>
 <p>不出意外这应该是最后一版了，接下来恐怕是不会再进行改版。</p>
 
