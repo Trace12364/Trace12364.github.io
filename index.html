@@ -276,161 +276,16 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="计算机网络复习笔记"><a href="#计算机网络复习笔记" class="headerlink" title="计算机网络复习笔记"></a>计算机网络复习笔记</h1><h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><h3 id="1-1-计算机网络在信息时代的作用"><a href="#1-1-计算机网络在信息时代的作用" class="headerlink" title="1.1 计算机网络在信息时代的作用"></a>1.1 计算机网络在信息时代的作用</h3><h3 id="1-2-因特网概述"><a href="#1-2-因特网概述" class="headerlink" title="1.2 因特网概述"></a>1.2 因特网概述</h3><h3 id="1-3-三种交换方式"><a href="#1-3-三种交换方式" class="headerlink" title="1.3 三种交换方式"></a>1.3 三种交换方式</h3><h4 id="1-电路交换"><a href="#1-电路交换" class="headerlink" title="1. 电路交换"></a>1. 电路交换</h4><p>电话交换机接通电话线的方式称为电路交换。</p>
-<p>从通信资源的分配角度来看，交换(Switching)就是按照某种方式动态地分配传输线路的资源；</p>
-<p>电路交换的三个步骤：</p>
-<p>①建立连接（分配通信资源）</p>
-<p>②通话（一直占用通信资源）</p>
-<p>③释放连接（归还通信资源）</p>
-<p><strong>当使用电路调换来传送计算机数据时，其线路的传输效率往往很低。</strong></p>
-<h4 id="2-分组交换（计算机采用的交换方式）"><a href="#2-分组交换（计算机采用的交换方式）" class="headerlink" title="2. 分组交换（计算机采用的交换方式）"></a>2. 分组交换（计算机采用的交换方式）</h4><table>
-<thead>
-<tr>
-<th align="center">发送方</th>
-<th align="center">路由器</th>
-<th align="center">接收方</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">构造分组</td>
-<td align="center">缓存分组</td>
-<td align="center">接受分组</td>
-</tr>
-<tr>
-<td align="center">发送分组</td>
-<td align="center">转发分组</td>
-<td align="center">还原报文</td>
-</tr>
-</tbody></table>
-<p>构成原始报文的一个分组，在各结点交换机上进行存储转发，相比报文交换，减少了转发时延。</p>
-<h4 id="3-报文交换"><a href="#3-报文交换" class="headerlink" title="3. 报文交换"></a>3. 报文交换</h4><p>由于不限制报文大小，因此需要个结点交换机都具有较大的缓存空间。</p>
-<p><em><strong>分组交换与报文交换均采取存储转发的模式。</strong></em></p>
-<h3 id="1-4-计算机网络的定义与分类"><a href="#1-4-计算机网络的定义与分类" class="headerlink" title="1.4 计算机网络的定义与分类"></a>1.4 计算机网络的定义与分类</h3><h4 id="计算机网络的定义："><a href="#计算机网络的定义：" class="headerlink" title="计算机网络的定义："></a>计算机网络的定义：</h4><ul>
-<li><input disabled type="checkbox"> 计算机网络的精确定义并不统一</li>
-<li><input disabled type="checkbox"> 计算机网络的最简单的定义：一些互相连接的、自治的计算机的集合<ul>
-<li><input disabled type="checkbox"> 互连 是指计算机之间可以通过有线或无线的方式进行数据通信</li>
-<li><input disabled type="checkbox"> 自治 是指独立的计算机</li>
-<li><input disabled type="checkbox"> 集合 是指至少需要两台计算机</li>
-</ul>
-</li>
-</ul>
-<h4 id="计算机网络的分类"><a href="#计算机网络的分类" class="headerlink" title="计算机网络的分类"></a>计算机网络的分类</h4><p>按交换技术分类：电路交换网络、报文交换网络、分组交换网络</p>
-<p>按使用者分类：公用网、专用网</p>
-<p>按传输介质分类：有线网络、无线网络</p>
-<p>按覆盖范围分类：广域网(WAN)、城域网(MAN)、局域网(LAN)、个域网(PAN)</p>
-<p>按拓扑结构分类：总线型网络、星型网络、环形网络、网状型网络</p>
-<h3 id="1-5-计算机网络的性能指标"><a href="#1-5-计算机网络的性能指标" class="headerlink" title="1.5 计算机网络的性能指标"></a>1.5 计算机网络的性能指标</h3><h4 id="1-速率"><a href="#1-速率" class="headerlink" title="1. 速率"></a>1. 速率</h4><p>8 bit &#x3D; 1 Byte</p>
-<table>
-<thead>
-<tr>
-<th>数据</th>
-<th>速率</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>KB&#x3D;2^10 B</td>
-<td>kb&#x2F;s &#x3D; 10^3 b&#x2F;s</td>
-</tr>
-<tr>
-<td>MB&#x3D;K · KB&#x3D;2^20 B</td>
-<td>Mb&#x2F;s &#x3D; k · kb&#x2F;s &#x3D; 10^6 b&#x2F;s</td>
-</tr>
-<tr>
-<td>GB&#x3D;K · MB&#x3D;2^30 B</td>
-<td>Gb&#x2F;s &#x3D; k · Mb&#x2F;s &#x3D; 10^9 b&#x2F;s</td>
-</tr>
-<tr>
-<td>TB&#x3D;K · GB&#x3D;2^40B</td>
-<td>Tb&#x2F;s &#x3D; k · Gb&#x2F;s &#x3D; 10^12 b&#x2F;s</td>
-</tr>
-</tbody></table>
-<p>连接在计算机网络上的主机在数字信道上传输比特的速率，也成为比特率或数据率。</p>
-<p>基本单位：bit&#x2F;s(b&#x2F;s,bps),常用单位: kb&#x2F;s,Mb&#x2F;s, Gb&#x2F;s, Tb&#x2F;s</p>
-<h4 id="2-带宽"><a href="#2-带宽" class="headerlink" title="2.  带宽"></a>2.  带宽</h4><p>用来表示网络的通信线路所能传送数据的能力，因此网络带宽表示在单位时间内从网络中某一点到零一点所能通过的“最高数据率”；单位与速率单位相同。</p>
-<h4 id="3-吞吐量"><a href="#3-吞吐量" class="headerlink" title="3. 吞吐量"></a>3. 吞吐量</h4><p>吞吐量表示在单位时间内通过某个网络（或通道、接口）的数据量。</p>
-<p>吞吐量被常用于对现实世界中的网络的一种测量，以便知道实际上待敌有多少数据量能够通过网络，吞吐量受网络的带块或额定速率的限制。</p>
-<h4 id="4-时延"><a href="#4-时延" class="headerlink" title="4. 时延"></a>4. 时延</h4><p>$$<br>发送时延&#x3D;\frac {分组长度(b)}{发送速率(b&#x2F;s)}<br>$$</p>
-<p>$$</p>
-<p>$$</p>
-<p>$$<br>传播时延&#x3D;\frac{信道长度(m)}{电磁波传播速率(m&#x2F;s)}<br>$$</p>
-<center>电磁波在常见介质的传播速率</center>
-
-<table>
-<thead>
-<tr>
-<th>空气</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>$$<br>处理时延:一般不便于计算<br>$$</p>
-<h4 id="5-时延带宽积"><a href="#5-时延带宽积" class="headerlink" title="5. 时延带宽积"></a>5. 时延带宽积</h4><p><strong>传播时延和带宽的乘积</strong></p>
-<p>若发送端连续发数据，则在发送的第一个比特即将到达终点时，发送端就已经发送了时延带宽积个比特</p>
-<p>链路的时延带宽积又称为以比特为单位的链路长度</p>
-<h4 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h4><h4 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h4><h4 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h4><h3 id="1-6计算机网络体系结构"><a href="#1-6计算机网络体系结构" class="headerlink" title="1.6计算机网络体系结构"></a>1.6计算机网络体系结构</h3><h4 id="1-常见的计算机网络体系结构"><a href="#1-常见的计算机网络体系结构" class="headerlink" title="1. 常见的计算机网络体系结构"></a>1. 常见的计算机网络体系结构</h4><table>
-<thead>
-<tr>
-<th>OSI体系结构</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>7.应用层</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>6.表示层</strong></td>
-<td></td>
-<td><strong>原理体系结构</strong></td>
-</tr>
-<tr>
-<td><strong>5.会话层</strong></td>
-<td><strong>TCP&#x2F;IP体系结构</strong></td>
-<td><strong>5.应用层</strong></td>
-</tr>
-<tr>
-<td><strong>4.运输层</strong></td>
-<td><strong>4.应用层</strong></td>
-<td><strong>4.运输层</strong></td>
-</tr>
-<tr>
-<td><strong>3.网络层</strong></td>
-<td><strong>3.运输层</strong></td>
-<td><strong>3.网络层</strong></td>
-</tr>
-<tr>
-<td><strong>2.数据链路层</strong></td>
-<td><strong>2.网际层</strong></td>
-<td><strong>2.数据链路层</strong></td>
-</tr>
-<tr>
-<td><strong>1.物理层</strong></td>
-<td><strong>1.网络接口层</strong></td>
-<td><strong>1.物理层</strong></td>
-</tr>
-</tbody></table>
-<p>图片{TCPIP}</p>
-<h4 id="2-计算机网络体系结构分层的必要性"><a href="#2-计算机网络体系结构分层的必要性" class="headerlink" title="2. 计算机网络体系结构分层的必要性"></a>2. 计算机网络体系结构分层的必要性</h4><h4 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h4><h4 id="4-计算机网络体系结构中的专用术语"><a href="#4-计算机网络体系结构中的专用术语" class="headerlink" title="4. 计算机网络体系结构中的专用术语"></a>4. 计算机网络体系结构中的专用术语</h4><center>实体、协议、服务</center>
-
+          <h1 id="计算机网络复习笔记"><a href="#计算机网络复习笔记" class="headerlink" title="计算机网络复习笔记"></a>计算机网络复习笔记</h1><h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><h3 id="1-1-计算机网络在信息时代的作用"><a href="#1-1-计算机网络在信息时代的作用" class="headerlink" title="1.1 计算机网络在信息时代的作用"></a>1.1 计算机网络在信息时代的作用</h3><h3 id="1-2-因特网概述"><a href="#1-2-因特网概述" class="headerlink" title="1.2 因特网概述"></a>1.2 因特网概述</h3><h3 id="1-3-三种交换方式"><a href="#1-3-三种交换方式" class="headerlink" title="1.3 三种交换方式"></a>1.3 三种交换方式</h3>
         
       </div>
 
        
         <footer class="article-footer">
+           
+            <a href="/2023/12/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/#more" class="article-more-link">
+              Read More<i class="fa-solid fa-angle-right"></i>
+            </a>
            
         </footer>
          
