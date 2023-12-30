@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-29T04:48:45.072Z</updated>
+  <updated>2023-12-30T10:38:09.055Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,33 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>网络安全入门</title>
-    <link href="http://example.com/2023/12/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%A5%E9%97%A8/"/>
-    <id>http://example.com/2023/12/29/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%85%A5%E9%97%A8/</id>
-    <published>2023-12-29T04:44:34.000Z</published>
-    <updated>2023-12-29T04:48:45.072Z</updated>
-    
-    <content type="html"><![CDATA[<p>Day01-虚拟机的安装 2023&#x2F;12&#x2F;29</p><p>1.vmware公司（专研虚拟机）</p><p>一台计算机同时只能运行一个操作系统</p><p>虚拟机运行架构</p><p>1.寄居架构（适合学习）</p><p>2.原生架构（企业生产环境使用）</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Day01-虚拟机的安装 2023&amp;#x2F;12&amp;#x2F;29&lt;/p&gt;
-&lt;p&gt;1.vmware公司（专研虚拟机）&lt;/p&gt;
-&lt;p&gt;一台计算机同时只能运行一个操作系统&lt;/p&gt;
-&lt;p&gt;虚拟机运行架构&lt;/p&gt;
-&lt;p&gt;1.寄居架构（适合学习）&lt;/p&gt;
-&lt;p&gt;2.原生架构（企业生产</summary>
-      
-    
-    
-    
-    
-    <category term="Study" scheme="http://example.com/tags/Study/"/>
-    
-  </entry>
   
   <entry>
     <title>计算机网络学习</title>
