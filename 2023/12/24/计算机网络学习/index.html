@@ -37,8 +37,11 @@
 <meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/2.5.1.png">
 <meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/2.5.2.png">
 <meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/2.5.3.png">
+<meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/3.3.1.png">
+<meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/3.3.2.png">
+<meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/3.3.3.png">
 <meta property="article:published_time" content="2023-12-24T01:21:52.000Z">
-<meta property="article:modified_time" content="2023-12-29T09:25:34.594Z">
+<meta property="article:modified_time" content="2023-12-30T10:16:13.831Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Study">
 <meta name="twitter:card" content="summary">
@@ -280,7 +283,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.7k words 
+            3.3k words 
           </div>
         </div>
         
@@ -463,7 +466,63 @@
 <p>自从香农公式发表后，各种<strong>新的信号处理和调制方法就不断出现，</strong>其目的都是为了尽可能地<strong>接近香农公式给出的传输速率极限。</strong></p>
 <p><strong>例题</strong>：</p>
 <p><img src="/.com//个人博客\hexo\blog\themes\vivia\source\images\ima\computer\2.5.3.png" alt="image-20231229172020686"></p>
-<h2 id="三、数据链路层"><a href="#三、数据链路层" class="headerlink" title="三、数据链路层"></a>三、数据链路层</h2><h3 id="3-1数据链路层概述"><a href="#3-1数据链路层概述" class="headerlink" title="3.1数据链路层概述"></a>3.1数据链路层概述</h3>
+<h2 id="三、数据链路层"><a href="#三、数据链路层" class="headerlink" title="三、数据链路层"></a>三、数据链路层</h2><h3 id="3-1数据链路层概述"><a href="#3-1数据链路层概述" class="headerlink" title="3.1数据链路层概述"></a>3.1数据链路层概述</h3><p>**链路(Link)**就是从一个结点到相邻结点的一段物理线路，而中间没有任何其他的交换结点。</p>
+<p>**数据链路(Data Link)**是指把通信协议的硬件和软件加到链路上，就构成了数据链路。</p>
+<p>数据链路层以<strong>帧</strong>为单位传输和处理数据。</p>
+<h4 id="数据链路层的三个重要问题"><a href="#数据链路层的三个重要问题" class="headerlink" title="数据链路层的三个重要问题"></a>数据链路层的三个重要问题</h4><h5 id="封装成帧："><a href="#封装成帧：" class="headerlink" title="封装成帧："></a>封装成帧：</h5><p>将数据链路层给网络层交付的协议数据单元，添加帧头和帧尾的操作，称作封装成帧。添加帧头和帧尾的目的，都是为了在链路上以帧为单元来传输数据。</p>
+<h5 id="差错检测："><a href="#差错检测：" class="headerlink" title="差错检测："></a>差错检测：</h5><p>发送方将封装好的帧通过物理层发送到传输媒体。帧在传输过程中遭遇干扰可能会发生误码。</p>
+<p>发送方在发送帧之前，基于待发送的数据和检错算法计算出检错码，并将其封装在帧尾。</p>
+<p>接收方主机收到帧后，通过检错码和检错算法，就可以判断出帧在传输过程中是否出现了误码。</p>
+<h5 id="可靠传输："><a href="#可靠传输：" class="headerlink" title="可靠传输："></a>可靠传输：</h5><p>接收方主机收到有误码的帧后，是不会接受该帧的，将其丢弃。如果数据链路层向其上层提高的是不可靠服务，那么丢弃就丢弃了，不会再有更多措施；如果数据链路层向其上层提供的是可靠的服务，那么就还需要其他措施，来确保接受方主机还可以重新收到被丢弃的这个帧的正确副本。换句话说，尽管误码是不能完全避免的，但若是实现发送方发送什么，接收方就能收到什么，就称为可靠传输。</p>
+<p><strong>封装成帧、差错检测、可靠传输</strong>是数据链路层中最基本、最重要的问题。是使用点对点信道的数据链路层来举例的。</p>
+<p>对于使用广播信道的数据链路层，除了包含这三个问题外，还有其他需要解决的问题。</p>
+<p>使用广播信道的数据链路层</p>
+<ul>
+<li>共享式以太网的媒体接入控制协议CSMA&#x2F;CD</li>
+<li>802.11局域网的媒体接入控制协议CSMA&#x2F;CA</li>
+</ul>
+<p>数据链路层的互联设备</p>
+<ul>
+<li>网桥和交换机的工作原理</li>
+<li>集线器（物理层互联设备）与交换机的区别</li>
+</ul>
+<h3 id="3-2-封装成帧"><a href="#3-2-封装成帧" class="headerlink" title="3.2 封装成帧"></a>3.2 封装成帧</h3><p><strong>封装成帧是指数据链路层给上层交付的数据单元添加帧头和帧尾使之成为帧</strong>。</p>
+<ul>
+<li><input disabled type="checkbox"> 帧头和帧尾中包含有重要的控制信息。</li>
+<li><input disabled type="checkbox"> 帧头和帧尾的作用之一就是帧定界</li>
+</ul>
+<p>并不是每一种数据链路层协议的帧都包含有帧定界标志。例如以太网版本2的MAC帧格式，在其帧头和帧尾中，并没有包含帧定界标志。以太网的数据链路层封装好MAC帧后，将其交付给物理层，物理层会在MAC帧前面，添加8字节的前导码，然后再将比特流转换成电信号发送。前导码中的前七个字节为前同步码，作用是使接收方的时钟同步。之后的1字节为帧开始定界符，表面七后面紧跟着的就是MAC帧。另外，以太网还规定了帧间间隔时间为96比特的发送时间。因此，MAC帧并不需要帧结束定界符。</p>
+<p><strong>透明传输是指数据链路层对上层交付的传输数据没有任何限制，就好像数据链路层不存在一样。</strong></p>
+<ul>
+<li><input disabled type="checkbox"> 面向字节的物理链路 使用字节填充的方法（或字符填充）的方法实现透明传输。</li>
+<li><input disabled type="checkbox"> 面向比特的物理链路 使用比特填充的方法实现透明传输。</li>
+</ul>
+<p><strong>为了提高帧的传输速率，应当使帧的数据部分的长度尽可能大些。</strong></p>
+<p><strong>考虑到差错控制等多种因素，每一种数据链路层协议都规定了帧的数据部分的长度上限，即最大传送单元MTU(Maximum Transfer Unit)。</strong></p>
+<h3 id="3-3差错检测"><a href="#3-3差错检测" class="headerlink" title="3.3差错检测"></a>3.3差错检测</h3><p>实际的通信链路都不是理想的，比特在传输过程中可能会产生差错：1可能会变成0，而0也可能变成1.这称为<strong>比特差错</strong>。</p>
+<p>在一段时间内，传输错误的比特占所传输比特总数的比率成为<strong>误码率BER(Bit Error Rate)。</strong></p>
+<p>使用<strong>差错检测码</strong>来检测数据在传输过程中是否产生了比特差错，是数据链路层所要解决的重要问题之一。</p>
+<h4 id="奇偶校验"><a href="#奇偶校验" class="headerlink" title="奇偶校验"></a>奇偶校验</h4><ul>
+<li><input disabled type="checkbox"> 在待发送的数据后面<strong>添加1位奇偶校验位，</strong>使整个数据（包括添加的检验位在内）中<strong>“1”的个数</strong>为奇数（奇校验）或偶数（偶校验）。</li>
+<li><input disabled type="checkbox"> 如果有<strong>奇数个位发生无码，</strong>则奇偶性发生变化，<strong>可以查出误码；</strong></li>
+<li><input disabled type="checkbox"> 如果有<strong>偶数个位发生误码，</strong>则奇偶性不发生变化，<strong>不能检查出误码（漏检）；</strong></li>
+</ul>
+<p>由于奇偶校验的漏检率比较高，因此计算机网络的数据链路层一般不会采用这种方法。</p>
+<h4 id="循环冗余校验CRC-Cyclic-Redundancy-Check"><a href="#循环冗余校验CRC-Cyclic-Redundancy-Check" class="headerlink" title="循环冗余校验CRC(Cyclic Redundancy Check)"></a>循环冗余校验CRC(Cyclic Redundancy Check)</h4><ul>
+<li><input disabled type="checkbox"> 收发双方约定好一个<strong>生成多项式G(x)；</strong></li>
+<li><input disabled type="checkbox"> 发送方基于待发送的数据和多项式计算出差错检测码(<strong>冗余码</strong>)，将其添加到待传输数据的后面一起传输；</li>
+<li><input disabled type="checkbox"> 接收方通过生成多项式来计算收到的数据是否产生了误码；</li>
+</ul>
+<p><img src="/.com//个人博客\hexo\blog\themes\vivia\source\images\ima\computer\3.3.1.png" alt="image-20231230180243165"></p>
+<p>举例：</p>
+<p><img src="/.com//个人博客\hexo\blog\themes\vivia\source\images\ima\computer\3.3.2.png" alt="image-20231230181031482"></p>
+<p><img src="/.com//个人博客\hexo\blog\themes\vivia\source\images\ima\computer\3.3.3.png" alt="image-20231230181152542"></p>
+<ul>
+<li>检错码只能检测出帧在传输过程中出现了差错，并不能定位错误，因此<strong>无法纠正错误。</strong></li>
+<li>要想纠正传输中的差错，可以使用冗余信息更多的<strong>纠错码</strong>进行<strong>前向纠错。</strong>但纠错码的开销比较大，在<strong>计算机网络中较少使用。</strong></li>
+<li>循环冗余校验<strong>CRC</strong>有很好的检错能力（<strong>漏检率非常低</strong>），虽然计算比较复杂，但非常<strong>易于用硬件实现</strong>，因此被广泛应用于数据链路层。</li>
+</ul>
+
         
       </div>
 
