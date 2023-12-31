@@ -40,8 +40,13 @@
 <meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/computer/3.3.1.png?raw=ture">
 <meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/computer/3.3.2.png?raw=ture">
 <meta property="og:image" content="https://github.com/Trace12364/Trace12364.github.io/blob/main/images/ima/computer/3.3.3.png?raw=ture">
+<meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/3.4.2.1.png">
+<meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/3.4.2.2.png">
+<meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/3.4.2.3.png">
+<meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/3.4.2.4.png">
+<meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/3.4.3.1.png">
 <meta property="article:published_time" content="2023-12-24T01:21:52.000Z">
-<meta property="article:modified_time" content="2023-12-31T02:25:17.924Z">
+<meta property="article:modified_time" content="2023-12-31T03:12:24.896Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Study">
 <meta name="twitter:card" content="summary">
@@ -283,7 +288,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            3.9k words 
+            4.1k words 
           </div>
         </div>
         
@@ -539,7 +544,18 @@
 <li>数据链路层不一定要实现可靠传输，有线链路一般不需要实现可靠传输，无线局域网数据链路层要实现可靠传输，数据链路层可靠是点对点的可靠，并不是真的可靠，主要保证物理层的可靠</li>
 <li>可靠传输的实现比较复杂，开销比较大，是否使用可靠传输取决于应用需求。</li>
 </ul>
-<h5 id="三种可靠传输实现机制的基本原理并不仅限于数据链路层，可以应用到计算机网络体系结构的各层协议中。"><a href="#三种可靠传输实现机制的基本原理并不仅限于数据链路层，可以应用到计算机网络体系结构的各层协议中。" class="headerlink" title="三种可靠传输实现机制的基本原理并不仅限于数据链路层，可以应用到计算机网络体系结构的各层协议中。"></a>三种可靠传输实现机制的基本原理并不仅限于数据链路层，可以应用到计算机网络体系结构的各层协议中。</h5><h4 id="可靠传输的实现机制——停止-等待协议SW"><a href="#可靠传输的实现机制——停止-等待协议SW" class="headerlink" title="可靠传输的实现机制——停止-等待协议SW"></a>可靠传输的实现机制——停止-等待协议SW</h4><h4 id="可靠传输的实现机制——回退N帧协议GBN"><a href="#可靠传输的实现机制——回退N帧协议GBN" class="headerlink" title="可靠传输的实现机制——回退N帧协议GBN"></a>可靠传输的实现机制——回退N帧协议GBN</h4><h4 id="可靠传输的实现机制——选择重传协议SR"><a href="#可靠传输的实现机制——选择重传协议SR" class="headerlink" title="可靠传输的实现机制——选择重传协议SR"></a>可靠传输的实现机制——选择重传协议SR</h4>
+<h5 id="三种可靠传输实现机制的基本原理并不仅限于数据链路层，可以应用到计算机网络体系结构的各层协议中。"><a href="#三种可靠传输实现机制的基本原理并不仅限于数据链路层，可以应用到计算机网络体系结构的各层协议中。" class="headerlink" title="三种可靠传输实现机制的基本原理并不仅限于数据链路层，可以应用到计算机网络体系结构的各层协议中。"></a>三种可靠传输实现机制的基本原理并不仅限于数据链路层，可以应用到计算机网络体系结构的各层协议中。</h5><h4 id="可靠传输的实现机制——停止-等待协议SW"><a href="#可靠传输的实现机制——停止-等待协议SW" class="headerlink" title="可靠传输的实现机制——停止-等待协议SW"></a>可靠传输的实现机制——停止-等待协议SW</h4><p><img src="/.com//个人博客\hexo\blog\themes\vivia\source\images\ima\computer\3.4.2.1.png" alt="image-20231231102555763"></p>
+<h5 id="停止-等待协议的信道利用率"><a href="#停止-等待协议的信道利用率" class="headerlink" title="停止-等待协议的信道利用率"></a>停止-等待协议的信道利用率</h5><p><img src="/.com//个人博客\hexo\blog\themes\vivia\source\images\ima\computer\3.4.2.2.png" alt="image-20231231102922683"></p>
+<p>当RTT远大于TD时，信道利用率会非常低。</p>
+<p>例1：</p>
+<p><img src="/.com//个人博客\hexo\blog\themes\vivia\source\images\ima\computer\3.4.2.3.png" alt="image-20231231104311685"></p>
+<p>例2：</p>
+<p><img src="/.com//个人博客\hexo\blog\themes\vivia\source\images\ima\computer\3.4.2.4.png" alt="image-20231231105115638"></p>
+<h4 id="可靠传输的实现机制——回退N帧协议GBN"><a href="#可靠传输的实现机制——回退N帧协议GBN" class="headerlink" title="可靠传输的实现机制——回退N帧协议GBN"></a>可靠传输的实现机制——回退N帧协议GBN</h4><p><img src="/.com//个人博客\hexo\blog\themes\vivia\source\images\ima\computer\3.4.3.1.png" alt="image-20231231110604123"></p>
+<p>回退N帧协议在流水线传输的基础上利用发送窗口来限制发送方连续发送数据分组的数量，是一种连续ARQ协议。</p>
+<p>在协议的工作 过程中发送窗口和接收窗口不断向前滑动，因此这类协议又称为滑动窗口协议。</p>
+<p>由于回退N帧协议的特性，当通信线路质量不好时，其信道利用率并不比停止等待协议高。</p>
+<h4 id="可靠传输的实现机制——选择重传协议SR"><a href="#可靠传输的实现机制——选择重传协议SR" class="headerlink" title="可靠传输的实现机制——选择重传协议SR"></a>可靠传输的实现机制——选择重传协议SR</h4>
         
       </div>
 
