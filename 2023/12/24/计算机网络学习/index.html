@@ -45,8 +45,11 @@
 <meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/3.4.2.3.png">
 <meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/3.4.2.4.png">
 <meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/3.4.3.1.png">
+<meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/4.2.1.png">
+<meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/4.2.2.png">
+<meta property="og:image" content="http://example.com/.com//%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/hexo/blog/themes/vivia/source/images/ima/computer/4.2.3.png">
 <meta property="article:published_time" content="2023-12-24T01:21:52.000Z">
-<meta property="article:modified_time" content="2023-12-31T03:12:24.896Z">
+<meta property="article:modified_time" content="2024-01-03T12:01:58.082Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Study">
 <meta name="twitter:card" content="summary">
@@ -184,6 +187,11 @@
       <h3 class="widget-title">Archives</h3>
       
       
+        <a class="archive-link" href="/archives/2024/01 ">
+          January 2024 
+          <div class="archive-count">1 </div>
+        </a>
+      
         <a class="archive-link" href="/archives/2023/12 ">
           December 2023 
           <div class="archive-count">1 </div>
@@ -215,6 +223,12 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
+          <a class="recent-link" href="/2024/01/06/%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%8D%E4%B9%A0%E5%A4%A7%E7%BA%B2/" title="信息论复习大纲" >
+            <div class="recent-link-text">
+              信息论复习大纲
+            </div>
+          </a>
+        
           <a class="recent-link" href="/2023/12/24/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0/" title="计算机网络学习" >
             <div class="recent-link-text">
               计算机网络学习
@@ -236,12 +250,6 @@
           <a class="recent-link" href="/2023/10/18/%E4%BD%BF%E7%94%A8CubeMX%E9%85%8D%E7%BD%AESTM32%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6/" title="使用CubeMX配置STM32启动文件" >
             <div class="recent-link-text">
               使用CubeMX配置STM32启动文件
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/10/17/STM32-Study/" title="STM32_Study" >
-            <div class="recent-link-text">
-              STM32_Study
             </div>
           </a>
         
@@ -288,7 +296,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            4.1k words 
+            4.4k words 
           </div>
         </div>
         
@@ -555,7 +563,15 @@
 <p>回退N帧协议在流水线传输的基础上利用发送窗口来限制发送方连续发送数据分组的数量，是一种连续ARQ协议。</p>
 <p>在协议的工作 过程中发送窗口和接收窗口不断向前滑动，因此这类协议又称为滑动窗口协议。</p>
 <p>由于回退N帧协议的特性，当通信线路质量不好时，其信道利用率并不比停止等待协议高。</p>
-<h4 id="可靠传输的实现机制——选择重传协议SR"><a href="#可靠传输的实现机制——选择重传协议SR" class="headerlink" title="可靠传输的实现机制——选择重传协议SR"></a>可靠传输的实现机制——选择重传协议SR</h4>
+<h4 id="可靠传输的实现机制——选择重传协议SR"><a href="#可靠传输的实现机制——选择重传协议SR" class="headerlink" title="可靠传输的实现机制——选择重传协议SR"></a>可靠传输的实现机制——选择重传协议SR</h4><p>回退N帧协议的接收窗口尺寸WR只能等于1，因此接收方只能按序接受正确到达的数据分组。</p>
+<p>一个数据分组分误码就会导致其后续多个数据分组不能被接收方按序接收而丢弃（尽管它们无乱序和误码）。这必然会造成发送方对这些数据分组的超时重传，显然这时对通信资源的极大浪费。</p>
+<p>为了进一步提高性能，可设法只重传出现误码的数据分组。因此，接收窗口的尺寸<strong>WR不应再等于1（而应大于1）</strong>，以便<strong>接收方先收下失序到达但无误码并且序号落在接受窗口内的那些数据分组</strong>，等到所缺分组收齐后再一并送交上层。这就是<strong>选择重传协议</strong>。</p>
+<h2 id="四、网络层"><a href="#四、网络层" class="headerlink" title="四、网络层"></a>四、网络层</h2><h3 id="4-1-网络层概述"><a href="#4-1-网络层概述" class="headerlink" title="4.1 网络层概述"></a>4.1 网络层概述</h3><h3 id="4-2-网络层提供的两种服务"><a href="#4-2-网络层提供的两种服务" class="headerlink" title="4.2 网络层提供的两种服务"></a>4.2 网络层提供的两种服务</h3><p><img src="/.com//个人博客\hexo\blog\themes\vivia\source\images\ima\computer\4.2.1.png" alt="image-20240103161900481"></p>
+<p><strong>因特网的先驱者并没有采用这种设计思路，而是采用了无连接的数据报服务。</strong></p>
+<p><img src="/.com//个人博客\hexo\blog\themes\vivia\source\images\ima\computer\4.2.2.png" alt="image-20240103162202721"></p>
+<p><strong>虚电路服务与数据报服务的比较：</strong></p>
+<p><img src="/.com//个人博客\hexo\blog\themes\vivia\source\images\ima\computer\4.2.3.png" alt="image-20240103162352998"></p>
+
         
       </div>
 
@@ -571,10 +587,15 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left  disabled "
+  <a class="article-nav-btn left "
+    
+      href="/2024/01/06/%E4%BF%A1%E6%81%AF%E8%AE%BA%E5%A4%8D%E4%B9%A0%E5%A4%A7%E7%BA%B2/"
+      title="信息论复习大纲"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
+      
+        信息论复习大纲
         
     </p>
   </a>
@@ -604,7 +625,7 @@
   
   <div id="footer-info" class="inner">
     
-    &copy; 2023 Trace<br>
+    &copy; 2024 Trace<br>
     Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
   </div>
 </footer>
