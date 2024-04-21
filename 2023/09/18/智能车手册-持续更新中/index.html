@@ -112,7 +112,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-04-21T15:34:45.587Z" itemprop="dateUpdated">2024-04-21</time>
+              <time  class="article-updated" datetime="2024-04-21T15:40:12.863Z" itemprop="dateUpdated">2024-04-21</time>
             </h2>
           
           
@@ -419,7 +419,7 @@
 <p>总之，关键是模拟地和数字地要一点接地。建议，不同种类地之间用0欧电阻相连；电源引入高频器件时用磁珠；高频信号线耦合用小电容；电感用在大功率低频上。 </p>
 <h3 id="2-高频滤波电路"><a href="#2-高频滤波电路" class="headerlink" title="2.高频滤波电路"></a>2.高频滤波电路</h3><p>在直流电源的输入端，可以通过增加电阻电容的方式构成RC串联电路来进行高频滤波。</p>
 <h3 id="3-无刷电调"><a href="#3-无刷电调" class="headerlink" title="3.无刷电调"></a>3.无刷电调</h3><p>在18届负压电磁组别中，允许使用无刷电机来给小车加负压以增加转弯时的向心力，这时需要绘制无刷电调以启动无刷电机。</p>
-<p>18届负压电磁用的无感无刷电调，并未使用霍尔检测换相，所以需要在程序中增加过零检测，且在电路中增加过零检测相应的电路。</p>
+<p>18届负压电磁用的是无感无刷电调，并未使用霍尔检测换相，所以需要在程序中增加过零检测，且在电路中增加过零检测相应的电路。</p>
 <p>这里需要注意一点，<strong>无刷电调的换相检测中的电阻要使用高精度电阻，推荐精度为0.1%，自举电路中二极管应靠近自举电容，且过零检测部分靠近预驱芯片。距离过远会导致产生的方波不完整，从而导致电调无法使用</strong></p>
 <p>（有待补充）</p>
 <h2 id="四、常用传感器"><a href="#四、常用传感器" class="headerlink" title="四、常用传感器"></a>四、常用传感器</h2><p>因为我们是从智能车竞赛开始的接触各类传感器，所有文章中大多介绍的是在智能车阶段所接触到的传感器。</p>
@@ -441,7 +441,12 @@
 <p>所谓的六轴陀螺仪叫六轴姿态感应器比较合适 是三轴陀螺仪和加速计的合称 如果有三轴陀螺仪也有加速计那就具有六轴姿态感应。而九轴感测组件是：三轴加速度计、三轴陀螺仪、三轴磁强计，然后欧拉角加四元数数据融合。</p>
 <p>十轴感测组件是：三轴加速度计、三轴陀螺仪、三轴磁强计，再加3轴气压，然后欧拉角加四元数数据融合。对比九轴传感器，可以测量气压高度。</p>
 <p>大多使用的是6轴陀螺仪。</p>
-<h3 id="5-TOF测距模块"><a href="#5-TOF测距模块" class="headerlink" title="5.TOF测距模块"></a>5.TOF测距模块</h3><h3 id="6-PID"><a href="#6-PID" class="headerlink" title="6.PID"></a>6.PID</h3><h4 id="一-定义"><a href="#一-定义" class="headerlink" title="一.定义"></a>一.定义</h4><p>PID，就是“比例（proportional）、积分（integral）、微分（derivative）”，是一种很 常见的控制算法。常见的PID有位置式PID,增量式PID，串级PID等。</p>
+<h3 id="5-TOF测距模块"><a href="#5-TOF测距模块" class="headerlink" title="5.TOF测距模块"></a>5.TOF测距模块</h3><h3 id="6-编码器"><a href="#6-编码器" class="headerlink" title="6.编码器"></a>6.编码器</h3><p>编码器可以精准读取脉冲数，（相当于转速）。</p>
+<p>我们使用的是逐飞科技的方向编码器，DIR引脚为1表示正转，为0表示反转。LSB引脚读取的是脉冲数。</p>
+<p><img src="https://img.gsimg.top/2024/04/21/10s6n28.jpg" alt="5b4df01be93dec9797ff6a57fc23b6e"></p>
+<p><img src="https://img.gsimg.top/2024/04/21/10sr4hv.jpg" alt="92799d87fd6de9e12ad1d0f79bfd901"></p>
+<p><img src="https://img.gsimg.top/2024/04/21/10suxrg.jpg" alt="598954be506dc83f02b2485937ef63f"></p>
+<h2 id="五、算法相关知识"><a href="#五、算法相关知识" class="headerlink" title="五、算法相关知识"></a>五、算法相关知识</h2><h3 id="1-PID"><a href="#1-PID" class="headerlink" title="1.PID"></a>1.PID</h3><h4 id="一-定义"><a href="#一-定义" class="headerlink" title="一.定义"></a>一.定义</h4><p>PID，就是“比例（proportional）、积分（integral）、微分（derivative）”，是一种很 常见的控制算法。常见的PID有位置式PID,增量式PID，串级PID等。</p>
 <p><img src="https://img-blog.csdnimg.cn/img_convert/3cb3b62431cc6cfbdb6e0eb4ebebf72e.png" alt="img"></p>
 <p><img src="https://img-blog.csdnimg.cn/2020110813265939.png" alt="img"></p>
 <p>Kp：比例增益</p>
@@ -501,11 +506,6 @@
 <p>串级PID1:速度环-&gt;角度环-&gt;角速度环-&gt;PWM1</p>
 <p>串级PID2:转向角度环-&gt;转向角速度环-&gt;PWM2</p>
 <p>并行PID：PID1_OUT+PID2_OUT</p>
-<h3 id="7-编码器"><a href="#7-编码器" class="headerlink" title="7.编码器"></a>7.编码器</h3><p>编码器可以精准读取脉冲数，（相当于转速）。</p>
-<p>我们使用的是逐飞科技的方向编码器，DIR引脚为1表示正转，为0表示反转。LSB引脚读取的是脉冲数。</p>
-<p><img src="https://img.gsimg.top/2024/04/21/10s6n28.jpg" alt="5b4df01be93dec9797ff6a57fc23b6e"></p>
-<p><img src="https://img.gsimg.top/2024/04/21/10sr4hv.jpg" alt="92799d87fd6de9e12ad1d0f79bfd901"></p>
-<p><img src="https://img.gsimg.top/2024/04/21/10suxrg.jpg" alt="598954be506dc83f02b2485937ef63f"></p>
 <h2 id="五、想写的东西"><a href="#五、想写的东西" class="headerlink" title="五、想写的东西"></a>五、想写的东西</h2><h3 id="1-关于RGB灯-常见的图像颜色空间解释-Sipeed-Wiki"><a href="#1-关于RGB灯-常见的图像颜色空间解释-Sipeed-Wiki" class="headerlink" title="1.关于RGB灯  常见的图像颜色空间解释 - Sipeed Wiki"></a>1.关于RGB灯  <a target="_blank" rel="noopener" href="https://wiki.sipeed.com/news/others/color_introduction/color_introduction.html">常见的图像颜色空间解释 - Sipeed Wiki</a></h3><p>红绿蓝 三色，也是大家熟悉光学三原色</p>
 <p>RGB 使用加色模式，也就是默认是黑色，三原色相加获得白色， 比如下图<code>蓝色+绿色=青色(cyan)</code>，得到<code>蓝色=青色-绿色</code>也就是<code>蓝色=青色+绿色</code>的互补色， 绿色的互补色就是图中的<code>M(品红色）magenta</code>（同理蓝色的互补色是Y黄色）（互补色就是两者相加为白色），所以<code>蓝色=青色+品红色</code></p>
 <p><img src="https://wiki.sipeed.com/news/others/color_introduction/assets/color_add.png" alt="img"></p>
