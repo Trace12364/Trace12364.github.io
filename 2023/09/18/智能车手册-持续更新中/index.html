@@ -112,7 +112,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-04-21T15:42:04.973Z" itemprop="dateUpdated">2024-04-21</time>
+              <time  class="article-updated" datetime="2024-04-21T15:45:20.507Z" itemprop="dateUpdated">2024-04-21</time>
             </h2>
           
           
@@ -447,15 +447,15 @@
 <p><img src="https://img.gsimg.top/2024/04/21/10sr4hv.jpg" alt="92799d87fd6de9e12ad1d0f79bfd901"></p>
 <p><img src="https://img.gsimg.top/2024/04/21/10suxrg.jpg" alt="598954be506dc83f02b2485937ef63f"></p>
 <h2 id="五、算法相关知识"><a href="#五、算法相关知识" class="headerlink" title="五、算法相关知识"></a>五、算法相关知识</h2><h3 id="1-PID"><a href="#1-PID" class="headerlink" title="1.PID"></a>1.PID</h3><h4 id="一-定义"><a href="#一-定义" class="headerlink" title="一.定义"></a>一.定义</h4><p>PID，就是“比例（proportional）、积分（integral）、微分（derivative）”，是一种很 常见的控制算法。常见的PID有位置式PID,增量式PID，串级PID等。</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/3cb3b62431cc6cfbdb6e0eb4ebebf72e.png" alt="img"></p>
-<p><img src="https://img-blog.csdnimg.cn/2020110813265939.png" alt="img"></p>
+<p><img src="https://img.gsimg.top/2024/04/21/12rt30l.png" alt="img"></p>
+<p><img src="https://img.gsimg.top/2024/04/21/12rla8u.png" alt="img"></p>
 <p>Kp：比例增益</p>
 <p>Ki：积分增益</p>
 <p>Kd：微分增益</p>
 <p>e：误差&#x3D;目标-当前值</p>
 <p>t：积分时间&#x2F;微分时间</p>
 <p>上面是理想公式，实际需要离散化</p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9nc3MwLmJhaWR1LmNvbS85NG8zZFNhZ194STRraEdrbzlXVEFuRjZoaHkvemhpZGFvL3doJTNENjAwJTJDODAwL3NpZ249NWJmZjY5MDhmMjE5ODYxODQxMTJlNzgyN2FkZDAyNGIvYjgxMmM4ZmNjM2NlYzNmZDE0ZTc0YjFjZGM4OGQ0M2Y4Njk0MjdmYS5qcGc" alt="pid算法中位置型和增量型有什么区别，分析两者优缺点"></p>
+<p><img src="https://img.gsimg.top/2024/04/21/12s88wj.png" alt="pid算法中位置型和增量型有什么区别，分析两者优缺点"></p>
 <h4 id="二-为什么使用pid算法-重要"><a href="#二-为什么使用pid算法-重要" class="headerlink" title="二.为什么使用pid算法(重要)"></a>二.为什么使用pid算法(重要)</h4><p>​		以电机转速为例子来解释，很多人应该都有这个疑惑，我控制转速，直接给电机输出一个PWM不就行了吗，假设我想让电机转慢一点，设置输出比较的PWM为200，我想让电机转的快一些，就给PWM输出1000，让电机全速旋转不就可以了吗?不停的进行测试，然后用编码器读取到电机当前的转速，记录下来，我就知道了电机的一个速度对应一个固定的PWM的值。<strong>大家有没有想过一个问题，电机随着使用时间的增加，电机的性能其实会发生变化，输出相同的PWM值，速度会和最开始测得的值是不一样的。</strong>我们有一辆小车（电机控制小车的速度），如果我改变小车的负重，根据生活中的常识，相同的输出电压下，负载越重，小车的速度越慢的，那么前面记录的数据都不成立了。所以说仅仅输出一个PWM值，是不能精确控制电机转动的速度保持在相同的值。这个时候PID的算法就会体现出重要的作用。现在，我用一个编码器来读取电机速度（编码器可以精确读取电机的转动速度），编码器的作用就是把电机转动的速度（模拟量）转化为一个数字量，传入到我们的微处理器。<strong>我们使用PID算法本质上是为了让编码器的值（即速度）稳定在一个值</strong></p>
 <h4 id="三-PID三个环节的作用"><a href="#三-PID三个环节的作用" class="headerlink" title="三.PID三个环节的作用"></a>三.PID三个环节的作用</h4><ol>
 <li>P</li>
