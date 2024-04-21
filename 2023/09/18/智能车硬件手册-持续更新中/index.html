@@ -112,7 +112,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-04-11T11:58:52.765Z" itemprop="dateUpdated">2024-04-11</time>
+              <time  class="article-updated" datetime="2024-04-21T15:01:08.038Z" itemprop="dateUpdated">2024-04-21</time>
             </h2>
           
           
@@ -122,6 +122,8 @@
           <ul class="wrap-list dark">
   
     <li><a href="/tags/%E7%A1%AC%E4%BB%B6%E7%9F%A5%E8%AF%86/">🏷️ 硬件知识</a></li>
+  
+    <li><a href="/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/">🏷️ 智能车</a></li>
   
 </ul>
         </div>
@@ -146,6 +148,11 @@
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
         <p>[TOC]</p>
+<p>此篇文章由Trace以及其队友郑鹤联合整理编写。其中，硬件部分由Trace整理编写，软件相关则由郑鹤负责。</p>
+<p><img src="https://img.gsimg.top/2024/04/21/10f2mjx.jpg" alt="d396a31b37615948a0edb12f569e606"></p>
+<p><img src="https://img.gsimg.top/2024/04/21/10gba9r.jpg" alt="184fae8159266018719991dfe6f23d8"></p>
+<p><img src="https://img.gsimg.top/2024/04/21/10fx9q5.jpg"></p>
+<p><strong>先贴几张我们比赛时候车车的帅照。</strong></p>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在接触智能车并且在硬件上有些心得之后，就开始有想法去写一篇硬件手册去传承下去，来做为真正的实验室传承，但是碍于种种原因始终未能做到。本来在一次聚餐之后，买了一些蜜雪冰城的奶茶之后抽奖抽到了一个比较大的笔记本，原本想用这个来作为硬件的传承手册。沉思之后想了想还是算了吧，虽然实体书可以让你在携带它时任何时候都能够翻开去看，但是终究不如以博客的形式保存起来。</p>
 <p>做这个并没有带有什么目的，仅仅是想把我、我们在硬件上面走的路给传下去，为了让后来者能够避免掉进我们所走的路上的坑，这些仅仅是经验所书写的，希望后来者有寻根到底的思想，因为经验可能也意味着错误，不能尽信。我们只是将我们所知道的一些信息进行汇总，而很有可能我们得到的就是错误的，我们确认为是正确的写了上去，所以希望你们保留批判思维。</p>
 <p>学习硬件是一个奇妙的旅程，你能够看到你自己设计的物品编程实物，并且发挥着它的作用，这里面的欣喜是难以形容的。但这旅程中也会有令人灰心丧气的风景，你满怀期待的去验证焊接完的板子，却怎么也找不到原因。或许是你的原理图从一开始就是错的，也或许，你的电流回路有问题。这些问题总是很玄学，找到后也没办法去及时的分享，使得重复造轮子的事情出现。而这也是我主张写总结的原因，不要重复造轮子。</p>
@@ -422,7 +429,72 @@
 <p>所谓的六轴陀螺仪叫六轴姿态感应器比较合适 是三轴陀螺仪和加速计的合称 如果有三轴陀螺仪也有加速计那就具有六轴姿态感应。而九轴感测组件是：三轴加速度计、三轴陀螺仪、三轴磁强计，然后欧拉角加四元数数据融合。</p>
 <p>十轴感测组件是：三轴加速度计、三轴陀螺仪、三轴磁强计，再加3轴气压，然后欧拉角加四元数数据融合。对比九轴传感器，可以测量气压高度。</p>
 <p>大多使用的是6轴陀螺仪。</p>
-<h3 id="5-TOF测距模块"><a href="#5-TOF测距模块" class="headerlink" title="5.TOF测距模块"></a>5.TOF测距模块</h3><h2 id="五、想写的东西"><a href="#五、想写的东西" class="headerlink" title="五、想写的东西"></a>五、想写的东西</h2><h3 id="1-关于RGB灯-常见的图像颜色空间解释-Sipeed-Wiki"><a href="#1-关于RGB灯-常见的图像颜色空间解释-Sipeed-Wiki" class="headerlink" title="1.关于RGB灯  常见的图像颜色空间解释 - Sipeed Wiki"></a>1.关于RGB灯  <a target="_blank" rel="noopener" href="https://wiki.sipeed.com/news/others/color_introduction/color_introduction.html">常见的图像颜色空间解释 - Sipeed Wiki</a></h3><p>红绿蓝 三色，也是大家熟悉光学三原色</p>
+<h3 id="5-TOF测距模块"><a href="#5-TOF测距模块" class="headerlink" title="5.TOF测距模块"></a>5.TOF测距模块</h3><h3 id="6-PID"><a href="#6-PID" class="headerlink" title="6.PID"></a>6.PID</h3><h4 id="一-定义"><a href="#一-定义" class="headerlink" title="一.定义"></a>一.定义</h4><p>PID，就是“比例（proportional）、积分（integral）、微分（derivative）”，是一种很 常见的控制算法。常见的PID有位置式PID,增量式PID，串级PID等。</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/3cb3b62431cc6cfbdb6e0eb4ebebf72e.png" alt="img"></p>
+<p><img src="https://img-blog.csdnimg.cn/2020110813265939.png" alt="img"></p>
+<p>Kp：比例增益</p>
+<p>Ki：积分增益</p>
+<p>Kd：微分增益</p>
+<p>e：误差&#x3D;目标-当前值</p>
+<p>t：积分时间&#x2F;微分时间</p>
+<p>上面是理想公式，实际需要离散化</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9nc3MwLmJhaWR1LmNvbS85NG8zZFNhZ194STRraEdrbzlXVEFuRjZoaHkvemhpZGFvL3doJTNENjAwJTJDODAwL3NpZ249NWJmZjY5MDhmMjE5ODYxODQxMTJlNzgyN2FkZDAyNGIvYjgxMmM4ZmNjM2NlYzNmZDE0ZTc0YjFjZGM4OGQ0M2Y4Njk0MjdmYS5qcGc" alt="pid算法中位置型和增量型有什么区别，分析两者优缺点"></p>
+<h4 id="二-为什么使用pid算法-重要"><a href="#二-为什么使用pid算法-重要" class="headerlink" title="二.为什么使用pid算法(重要)"></a>二.为什么使用pid算法(重要)</h4><p>​		以电机转速为例子来解释，很多人应该都有这个疑惑，我控制转速，直接给电机输出一个PWM不就行了吗，假设我想让电机转慢一点，设置输出比较的PWM为200，我想让电机转的快一些，就给PWM输出1000，让电机全速旋转不就可以了吗?不停的进行测试，然后用编码器读取到电机当前的转速，记录下来，我就知道了电机的一个速度对应一个固定的PWM的值。<strong>大家有没有想过一个问题，电机随着使用时间的增加，电机的性能其实会发生变化，输出相同的PWM值，速度会和最开始测得的值是不一样的。</strong>我们有一辆小车（电机控制小车的速度），如果我改变小车的负重，根据生活中的常识，相同的输出电压下，负载越重，小车的速度越慢的，那么前面记录的数据都不成立了。所以说仅仅输出一个PWM值，是不能精确控制电机转动的速度保持在相同的值。这个时候PID的算法就会体现出重要的作用。现在，我用一个编码器来读取电机速度（编码器可以精确读取电机的转动速度），编码器的作用就是把电机转动的速度（模拟量）转化为一个数字量，传入到我们的微处理器。<strong>我们使用PID算法本质上是为了让编码器的值（即速度）稳定在一个值</strong></p>
+<h4 id="三-PID三个环节的作用"><a href="#三-PID三个环节的作用" class="headerlink" title="三.PID三个环节的作用"></a>三.PID三个环节的作用</h4><ol>
+<li>P</li>
+</ol>
+<p>起主要控制作用，使反馈量向目标值靠拢。</p>
+<p>过大响应快，但是会引起震荡。过小无震荡，但是存在静态误差。</p>
+<ol start="2">
+<li>D</li>
+</ol>
+<p>抑制震荡</p>
+<p>当比较接近目标时，P的控制作用就比较小了。越接近目标，P的作用越温柔。有很多内在的或者外部的因素，使控制量发生小范围的摆动。D的作用就是让物理量的速度趋于0，只要什么时候，这个量具有了速度，D就向相反的方向用力，尽力抑制住振荡的变化。在自动控制原理这门学科中会提到专业的名词。现在我们引入偏差值的概念，令Bias&#x3D;taget-position，令上一次求得的偏差值为Last_Bias。D项的计算公式为Position_KD*(Bias-Last_Bias）。</p>
+<p>我用带入值的方法来解释D的作用：现在让当前的速度值为90，目标值为100，Bias&#x3D;10。现在是为了接近目标值，所以D项的结果是增加PWM。现在增加后的速度变成了105，Bias&#x3D;-5,Last_Bias&#x3D;10，Bias-Last_Bias&#x3D;-15，如果增加后的速度为110，Bias&#x3D;-10，Last_Bias&#x3D;10，Bias-Last_Bias&#x3D;-20，D项的计算结果是为了减小PWM，快速抑制住PWM的过量增加，超过目标值越多，那么抑制能力越厉害。</p>
+<ol start="3">
+<li>I</li>
+</ol>
+<p>PID中的I的作用是为了消除静差，静差就是指，稳定状态下当前值和目标值的差，为了让大家更清楚理解I的概念，之前看到一个很有趣的例子，这里借鉴一下：</p>
+<p>假如有个人把我们的加热装置带到了非常冷的地方，开始烧水了。需要烧到50℃。</p>
+<p>在P的作用下，水温慢慢升高。直到升高到45℃时，他发现了一个不好的事情：天气太冷，水散热的速度，和P控制的加热的速度相等了。</p>
+<p>这可怎么办？</p>
+<p>P兄这样想：我和目标已经很近了，只需要轻轻加热就可以了。<br>D兄这样想：加热和散热相等，温度没有波动，我好像不用调整什么。<br>于是，水温永远地停留在45℃，永远到不了50℃。</p>
+<p>作为一个人，根据常识，我们知道，应该进一步增加加热的功率。可是增加多少该如何计算呢？</p>
+<p>设置一个积分量。只要偏差存在，就不断地对偏差进行积分（累加），并反应在调节力度上。</p>
+<p>这样一来，即使45℃和50℃相差不太大，但是随着时间的推移，只要没达到目标温度，这个积分量就不断增加。系统就会慢慢意识到：还没有到达目标温度，该增加功率啦！</p>
+<p>到了目标温度后，假设温度没有波动，积分值就不会再变动。这时，加热功率仍然等于散热功率。但是，温度是稳稳的50℃。</p>
+<p>kI的值越大，积分时乘的系数就越大，积分效果越明显。但要注意积分限幅，积分限幅可以减小积分引起的超调。</p>
+<h4 id="四-增量式PID与位置式PID"><a href="#四-增量式PID与位置式PID" class="headerlink" title="四.增量式PID与位置式PID"></a>四.增量式PID与位置式PID</h4><ol>
+<li>位置式PID<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9nc3MwLmJhaWR1LmNvbS85NG8zZFNhZ194STRraEdrbzlXVEFuRjZoaHkvemhpZGFvL3doJTNENjAwJTJDODAwL3NpZ249NWJmZjY5MDhmMjE5ODYxODQxMTJlNzgyN2FkZDAyNGIvYjgxMmM4ZmNjM2NlYzNmZDE0ZTc0YjFjZGM4OGQ0M2Y4Njk0MjdmYS5qcGc"></li>
+</ol>
+<p>​	<strong>位置式PID是当前系统的实际位置，与你想要达到的预期位置的偏差</strong>，进行PID控制</p>
+<ol start="2">
+<li>增量式PID<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9nc3MwLmJhaWR1LmNvbS85NG8zZFNhZ194STRraEdrbzlXVEFuRjZoaHkvemhpZGFvL3doJTNENjAwJTJDODAwL3NpZ249NjAyYzFhOTdjOWZkZmMwM2U1MmRlYmJlZTQwZmFiYWMvZTRkZGU3MTE5MGVmNzZjNjBmM2YxNzQyOTcxNmZkZmFhZTUxNjdlZS5qcGc" alt="img"></li>
+</ol>
+<p>​	<strong>控制量▲u(k)对应的是近几次位置误差的增量，而不是对应与实际位置的偏差</strong>，也就是说，增量式PID中不需要累加。控制增量Δu(k)的确定仅与<strong>最近3次的采样值</strong>有关，容易通过加权处理获得比较好的控制效果，并且在系统发生问题时，增量式不会严重影响系统的工作。</p>
+<p>(在我们的速度控制闭环系统里面，只使用PI控制)</p>
+<ol start="3">
+<li><p><strong>总结：</strong>增量型 PID，是对位置型 PID 取增量，这时控制器输出的是相邻两次采样时刻所计算的位置值<br>之差，得到的结果是增量，即在上一次的控制量的基础上需要增加（负值意味减少）控制量。</p>
+</li>
+<li><p>增量式与位置式区别：<br>1）增量式算法不需要做累加，控制量增量的确定仅与最近几次偏差采样值有关，计算误差对控制 量计算的影响较小。而位置式算法要用到过去偏差的累加值，容易产生较大的累加误差。 </p>
+<p>2）增量式算法得出的是控制量的增量，例如在阀门控制中，只输出阀门开度的变化部分，误动作 影响小，必要时还可通过逻辑判断限制或禁止本次输出，不会严重影响系统的工作。 而位置式的输出直接对应对象的输出，因此对系统影响较大。</p>
+<p>3）增量式PID控制输出的是控制量增量，并无积分作用，因此该方法适用于执行机构带积分部件的对象，如步进电机等，而位置式PID适用于执行机构不带积分部件的对象，如电舵机。</p>
+<p>4）在进行PID控制时，位置式PID需要有积分限幅和输出限幅，而增量式PID只需输出限幅</p>
+</li>
+</ol>
+<h4 id="五-串级PID与并级PID"><a href="#五-串级PID与并级PID" class="headerlink" title="五.串级PID与并级PID"></a>五.串级PID与并级PID</h4><p>单级PID，目标值和反馈值经过一次PID计算就得到输出值并直接作为控制量，如果目标物理量和输出物理量直接不止差了一阶的话，中间阶次的物理量我们是无法控制的。<em>比如：目标物理量是位置，输出物理量是加速度，则小球的速度是无法控制的。</em>而串级PID就可以改善这一点。</p>
+<p><img src="https://img-blog.csdnimg.cn/b59feebe4e6e4de6a32fcee88a35b525.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc2t5dGhpbmtlcjYxNg==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>
+<p>举例：直立车</p>
+<p><img src="https://img-blog.csdnimg.cn/926d912e159a450d89ee3b90f1c5ab99.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAV3llYW4=,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>
+<p>串级PID1:速度环-&gt;角度环-&gt;角速度环-&gt;PWM1</p>
+<p>串级PID2:转向角度环-&gt;转向角速度环-&gt;PWM2</p>
+<p>并行PID：PID1_OUT+PID2_OUT</p>
+<h3 id="7-编码器"><a href="#7-编码器" class="headerlink" title="7.编码器"></a>7.编码器</h3><p>编码器可以精准读取脉冲数，（相当于转速）。</p>
+<p>我们使用的是逐飞科技的方向编码器，DIR引脚为1表示正转，为0表示反转。LSB引脚读取的是脉冲数。</p>
+<p><img src="https://img.gsimg.top/2024/04/21/10s6n28.jpg" alt="5b4df01be93dec9797ff6a57fc23b6e"></p>
+<p><img src="https://img.gsimg.top/2024/04/21/10sr4hv.jpg" alt="92799d87fd6de9e12ad1d0f79bfd901"></p>
+<p><img src="https://img.gsimg.top/2024/04/21/10suxrg.jpg" alt="598954be506dc83f02b2485937ef63f"></p>
+<h2 id="五、想写的东西"><a href="#五、想写的东西" class="headerlink" title="五、想写的东西"></a>五、想写的东西</h2><h3 id="1-关于RGB灯-常见的图像颜色空间解释-Sipeed-Wiki"><a href="#1-关于RGB灯-常见的图像颜色空间解释-Sipeed-Wiki" class="headerlink" title="1.关于RGB灯  常见的图像颜色空间解释 - Sipeed Wiki"></a>1.关于RGB灯  <a target="_blank" rel="noopener" href="https://wiki.sipeed.com/news/others/color_introduction/color_introduction.html">常见的图像颜色空间解释 - Sipeed Wiki</a></h3><p>红绿蓝 三色，也是大家熟悉光学三原色</p>
 <p>RGB 使用加色模式，也就是默认是黑色，三原色相加获得白色， 比如下图<code>蓝色+绿色=青色(cyan)</code>，得到<code>蓝色=青色-绿色</code>也就是<code>蓝色=青色+绿色</code>的互补色， 绿色的互补色就是图中的<code>M(品红色）magenta</code>（同理蓝色的互补色是Y黄色）（互补色就是两者相加为白色），所以<code>蓝色=青色+品红色</code></p>
 <p><img src="https://wiki.sipeed.com/news/others/color_introduction/assets/color_add.png" alt="img"></p>
 <p><img src="https://wiki.sipeed.com/news/others/color_introduction/assets/coordinate_box.png" alt="img"></p>
@@ -542,7 +614,7 @@
         <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
 </svg>
-        3
+        4
       </div>
     </div>
   </div>
@@ -587,7 +659,7 @@
   </div>
   <div class="widget-body">
     <div class="tags-cloud">
-      <a href="/tags/Study/" style="font-size: 10px;" class="tags-cloud-0">Study</a> <a href="/tags/%E4%B8%AA%E4%BA%BADIY/" style="font-size: 10px;" class="tags-cloud-0">个人DIY</a> <a href="/tags/%E7%A1%AC%E4%BB%B6%E7%9F%A5%E8%AF%86/" style="font-size: 10px;" class="tags-cloud-0">硬件知识</a>
+      <a href="/tags/Study/" style="font-size: 10px;" class="tags-cloud-0">Study</a> <a href="/tags/%E4%B8%AA%E4%BA%BADIY/" style="font-size: 10px;" class="tags-cloud-0">个人DIY</a> <a href="/tags/%E6%99%BA%E8%83%BD%E8%BD%A6/" style="font-size: 10px;" class="tags-cloud-0">智能车</a> <a href="/tags/%E7%A1%AC%E4%BB%B6%E7%9F%A5%E8%AF%86/" style="font-size: 10px;" class="tags-cloud-0">硬件知识</a>
     </div>
   </div>
 </section>
