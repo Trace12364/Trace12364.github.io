@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-25T15:24:13.063Z</updated>
+  <updated>2024-06-09T15:17:02.493Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些技术相关网站总结</title>
+    <link href="http://example.com/2024/06/09/%E4%B8%80%E4%BA%9B%E6%8A%80%E6%9C%AF%E7%9B%B8%E5%85%B3%E7%BD%91%E7%AB%99%E6%80%BB%E7%BB%93/"/>
+    <id>http://example.com/2024/06/09/%E4%B8%80%E4%BA%9B%E6%8A%80%E6%9C%AF%E7%9B%B8%E5%85%B3%E7%BD%91%E7%AB%99%E6%80%BB%E7%BB%93/</id>
+    <published>2024-06-09T15:10:14.000Z</published>
+    <updated>2024-06-09T15:17:02.493Z</updated>
+    
+    <content type="html"><![CDATA[<p>Get IoT </p><p><a href="https://getiot.tech/">GetIoT 人人都懂物联网 - 万物互联，你我同在！ | 人人都懂物联网</a></p><p>简介：一个非常齐全的AIoT技术知识库，包含了许多创客知识，支持中文。</p><p>ESP-Home</p><p><a href="https://esphome.io/">ESPHome</a></p><p>一个介绍ESP32学习的网站，暂不支持中文。</p><p><a href="https://app.diagrams.net/">draw.io (diagrams.net)</a></p><p>简介：一个能够网页端打开的绘制简单的连接图的网站，支持中文</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Get IoT &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://getiot.tech/&quot;&gt;GetIoT 人人都懂物联网 - 万物互联，你我同在！ | 人人都懂物联网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;简介：一个非常齐全的AIoT技术知识库，包含了许多创客知识，支持中文。&lt;/p&gt;
+&lt;</summary>
+      
+    
+    
+    
+    
+    <category term="Study" scheme="http://example.com/tags/Study/"/>
+    
+  </entry>
   
   <entry>
     <title>TceKEY</title>
@@ -43,11 +68,20 @@
     <link href="http://example.com/2024/05/15/Buck%E7%94%B5%E8%B7%AF%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%B8%83%E5%B1%80/"/>
     <id>http://example.com/2024/05/15/Buck%E7%94%B5%E8%B7%AF%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%B8%83%E5%B1%80/</id>
     <published>2024-05-15T15:11:01.000Z</published>
-    <updated>2024-05-15T15:11:01.561Z</updated>
+    <updated>2024-06-05T12:44:06.850Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="自恢复保险丝介绍"><a href="#自恢复保险丝介绍" class="headerlink" title="自恢复保险丝介绍"></a>自恢复保险丝介绍</h2><p>自恢复保险丝是一种过流电子保护元件，采用高分子有机聚合物在高压、高温，硫化反应的条件下，掺加导电粒子材料后，经过特殊的工艺加工而成。传统保险丝过流保护，仅能保护一次，烧断了需更换，而自恢复保险丝具有过流过热保护，自动恢复双重功能。</p><p><strong>1.工作原理</strong></p><p>　　自恢复保险丝是由经过特殊处理的聚合树脂(Polymer)及分布，在里面的导电粒子(Carbon Black)组成。在正常操作下，聚合树脂紧密地将导电粒子，束缚在结晶状的结构外，构成链状导电电通路，此时的自恢复保险丝为低阻状态(a)，线路上流经自恢复保险丝的电流所产生的热能小，不会改变晶体结构。</p><p>　　当线路发生短路或过载时，流经自恢复保险丝的大电流，产生的热量使聚合树脂融化，体积迅速增长，形成高阻状态(b)，工作电流迅速减小，从而对电路进行限制和保护。</p><p>　　当故障排除后，自恢复保险丝重新冷却结晶，体积收缩，导电粒子重新形成导电通路，自恢复保险丝恢复为低阻状态，从而完成对电路的保护，无须人工更换。</p><p><strong>2.动作原理</strong></p><p>　　自恢复保险丝的动作原理是一种能量的动态平衡，流过自恢复保险丝的电流，由于电流热效应的关系，产生一定程度的热量(自恢复保险丝都存在阻值)，产生的热全部或部分散发到环境中，而没有散发出去的热便会提高自恢复保险丝元件的温度。</p><p>　　正常工作时的温度较低，产生的热和散发的热达到平衡。</p><p>　　自恢复保险丝元件处于低阻状态，自恢复保险丝不动作，当流过自恢复保险丝元件的电流，增加或环境温度升高，但如果达到产生的热和散发的热的平衡时，自恢复保险丝仍不动作。</p><p>　　当电流或环境温度再提高时，自恢复保险丝会达到较高的温度。</p><p>　　若此时电流或环境温度，继续再增加，产生的热量，会大于散发出去的热量，使得自恢复保险丝元件温度骤增，在此阶段，很小的温度变化会造成阻值的大幅提高，这时自恢复保险丝元件处于高阻保护状态，阻抗的增加限制了电流，电流在很短时间内急剧下降，从而保护电路设备免受损坏，只要施加的电压所产生的热量足够自恢复保险丝元件散发出的热量，处于变化状态下的自恢复保险丝元件便可以一直处于动作状态(高阻)。</p><p>　　当施加的电压消失时，自恢复保险丝便可以自动恢复了。</p><p>​<strong>3.保险丝参数介绍</strong></p><p>• Ihold：维持电流</p><p>• Itrip：规定电流下的最大动作时间；</p><p>• Vmax：可承受的最大电压</p><p>• Imax：可承受的最大电流</p><p>• Pd：高阻状态的稳压功耗</p><p>• R：一定温度下测得的零功率电阻</p><p>• R1max：经动作或回焊一小时后在室温下所测得的最大电阻值</p><p>• 环境温度：PTC周围静止空气的温度</p><p>• 最大工作环境温度：PTC安全工作的最高环境温度</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;自恢复保险丝介绍&quot;&gt;&lt;a href=&quot;#自恢复保险丝介绍&quot; class=&quot;headerlink&quot; title=&quot;自恢复保险丝介绍&quot;&gt;&lt;/a&gt;自恢复保险丝介绍&lt;/h2&gt;&lt;p&gt;自恢复保险丝是一种过流电子保护元件，采用高分子有机聚合物在高压、高温，硫化反应的条件下，掺加</summary>
+      
     
     
     
     
+    <category term="硬件知识" scheme="http://example.com/tags/%E7%A1%AC%E4%BB%B6%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   
