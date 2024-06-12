@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-09T15:17:02.493Z</updated>
+  <updated>2024-06-12T09:48:56.451Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>待做产品</title>
+    <link href="http://example.com/2024/06/12/%E5%BE%85%E5%81%9A%E4%BA%A7%E5%93%81/"/>
+    <id>http://example.com/2024/06/12/%E5%BE%85%E5%81%9A%E4%BA%A7%E5%93%81/</id>
+    <published>2024-06-12T09:43:20.000Z</published>
+    <updated>2024-06-12T09:48:56.451Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.可随身携带蓝牙音箱</p><p>定位：可别在钥匙扣上随身携带</p><p>使用杰理AC6955F芯片，带程序1开发，支持TF卡，支持蓝牙连接，单声道，带3D外壳，大小目前未定，根据所找到的合适的喇叭大小来设定，目前暂定不能超过4*4</p><p>2.TceKey</p><p>基于KeePass的开源密码管理器，支持触摸输入密码，支持NFC，使用ESP32主控，ESP-IDF开发。</p><p>3.两轮平衡小车</p><p>使用STM32单片机为主控，一体板继承陀螺仪、电机驱动、人机交互、屏幕等，</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;1.可随身携带蓝牙音箱&lt;/p&gt;
+&lt;p&gt;定位：可别在钥匙扣上随身携带&lt;/p&gt;
+&lt;p&gt;使用杰理AC6955F芯片，带程序1开发，支持TF卡，支持蓝牙连接，单声道，带3D外壳，大小目前未定，根据所找到的合适的喇叭大小来设定，目前暂定不能超过4*4&lt;/p&gt;
+&lt;p&gt;2.TceKey&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>一些技术相关网站总结</title>
@@ -46,9 +69,9 @@
     <link href="http://example.com/2024/05/24/TceKEY/"/>
     <id>http://example.com/2024/05/24/TceKEY/</id>
     <published>2024-05-24T14:43:21.000Z</published>
-    <updated>2024-05-25T15:24:13.063Z</updated>
+    <updated>2024-06-09T15:27:35.177Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="TceKEY"><a href="#TceKEY" class="headerlink" title="TceKEY"></a>TceKEY</h2><h5 id="DAY：5-24"><a href="#DAY：5-24" class="headerlink" title="DAY：5&#x2F;24"></a>DAY：5&#x2F;24</h5><p>从之前在微信的公众号文章介绍的一个开源硬件密码管理器之后，就产生了制作一个的想法，因为Github的大佬开源的是一个arduino的版本，所以最开始企图在Stm32上面去实现，但是偶然间看了B站的视频之后，产生了拿Esp32制作一个硬件密钥管理器的想法</p><p>以下是B站UPMeXdiy的介绍：<br>MeXkey是一款与KeePass搭配使用的硬件密钥管理器</p><p>主控：   ESP32-S3<br>        存储：   32M FLASH 存储 （厂家数据 :10万次擦写，20年掉电保存）<br>        屏幕：   1.69 寸 TFT 电容触摸屏<br>        电池：   200mAh 锂电池（待机电流2.55mA，关机电流73uA） </p><p>功能：<br>        支持USB&#x2F;蓝牙输出账号密码及其它数据<br>        U盘模式搭配KeePass（或其它兼容KeePass软件）实现浏览器自动填充<br>        支持FIDO2<br>        支持OpenPGP&#x2F;PIV智能卡（每个MeXkey包含5张智能卡）<br>        支持TOTP，Steam令牌<br>        安全启动，FLASH加密（U盘分区不加密，kdbx文件本身已经加密）</p><p>而我如果拿去复刻一个的话，<br>        主控：ESP32-C3</p><p><img src="https://img2.imgtp.com/2024/05/25/SOjmkNA4.jpg" alt="1716650630790.jpg"></p><p>因为ESP32-C3的主频只有160MHz，相比于ESP32-S3的240MHz少了挺多的主频，所以如果处理速度不够的话，应该会再选择ESP32-S3</p><p><img src="https://img2.imgtp.com/2024/05/24/pSp0GAYC.jpg" alt="1716563053640.jpg"></p><p><img src="https://img2.imgtp.com/2024/05/24/tJ4BYu57.jpg" alt="1716563058914.jpg"></p><p>存储：   32M FLASH 存储 （厂家数据 :10万次擦写，20年掉电保存）<br>        屏幕：   购买了3.2寸电容触摸屏，芯片型号FT6336U，但是如果占用进程过多，会选择换成1.69 寸 TFT 电容触摸屏<br>        电池：   待定<br>        并且希望能够支持NFC功能，采用STM32的M24SR系列芯片来支持NFC功能。</p><p>在一晚上的搜寻信息之后，决定代码会编写在arduino，图形化界面(UI)会使用LVGL来生成。</p><p>未来一周会保持白天学习STM32直到定时器学习完毕，穿插学习使用LVGL的状态，并且希望能够在五月结束之前完成LVGL的学习，并且六月开始为期一周的arduino+Esp32的练习，希望此项目能够在暑假结束前完成。</p><p><a href="https://www.nologo.tech/product/esp32/esp32s3supermini/esp32S3SuperMini.html">模块厂商提供的相关学习链接</a></p><p>初步设想的实现功能:</p><ul><li><input disabled type="checkbox"> 长时间不使用进入深度睡眠模式,触摸启动,初次唤醒需要输入PIN值,且每次输入PIN值的键盘会打乱顺序,使得即使被他人监视输入的位置之后也不会被识别PIN值。</li><li><input disabled type="checkbox"> 支持USB输出账号密码及其它数据</li><li><input disabled type="checkbox"> U盘模式搭配KeePass（或其它兼容KeePass软件）实现浏览器自动填充</li><li><input disabled type="checkbox"> 支持FIDO2</li><li><input disabled type="checkbox"> 支持TOTP，Steam令牌</li><li><input disabled type="checkbox"> 安全启动，FLASH使用AES-256加密（U盘分区不加密，kdbx文件本身已经加密）</li><li><input disabled type="checkbox"> 支持存储NFC功能,能够存储校园卡里面的NFC信息</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="TceKEY"><a href="#TceKEY" class="headerlink" title="TceKEY"></a>TceKEY</h2><h5 id="DAY：5-24"><a href="#DAY：5-24" class="headerlink" title="DAY：5&#x2F;24"></a>DAY：5&#x2F;24</h5><p>从之前在微信的公众号文章介绍的一个开源硬件密码管理器之后，就产生了制作一个的想法，因为Github的大佬开源的是一个arduino的版本，所以最开始企图在Stm32上面去实现，但是偶然间看了B站的视频之后，产生了拿Esp32制作一个硬件密钥管理器的想法</p><p>以下是B站UPMeXdiy的介绍：<br>MeXkey是一款与KeePass搭配使用的硬件密钥管理器</p><p>主控：   ESP32-S3<br>        存储：   32M FLASH 存储 （厂家数据 :10万次擦写，20年掉电保存）<br>        屏幕：   1.69 寸 TFT 电容触摸屏<br>        电池：   200mAh 锂电池（待机电流2.55mA，关机电流73uA） </p><p>功能：<br>        支持USB&#x2F;蓝牙输出账号密码及其它数据<br>        U盘模式搭配KeePass（或其它兼容KeePass软件）实现浏览器自动填充<br>        支持FIDO2<br>        支持OpenPGP&#x2F;PIV智能卡（每个MeXkey包含5张智能卡）<br>        支持TOTP，Steam令牌<br>        安全启动，FLASH加密（U盘分区不加密，kdbx文件本身已经加密）</p><p>而我如果拿去复刻一个的话，<br>        主控：ESP32-C3</p><p><img src="https://img2.imgtp.com/2024/05/25/SOjmkNA4.jpg" alt="1716650630790.jpg"></p><p>因为ESP32-C3的主频只有160MHz，相比于ESP32-S3的240MHz少了挺多的主频，所以如果处理速度不够的话，应该会再选择ESP32-S3</p><p><img src="https://img2.imgtp.com/2024/05/24/pSp0GAYC.jpg" alt="1716563053640.jpg"></p><p><img src="https://img2.imgtp.com/2024/05/24/tJ4BYu57.jpg" alt="1716563058914.jpg"></p><p>存储：   32M FLASH 存储 （厂家数据 :10万次擦写，20年掉电保存）<br>        屏幕：   购买了3.2寸电容触摸屏，芯片型号FT6336U，但是如果占用进程过多，会选择换成1.69 寸 TFT 电容触摸屏<br>        电池：   待定<br>        并且希望能够支持NFC功能，采用STM32的M24SR系列芯片来支持NFC功能。</p><p>在一晚上的搜寻信息之后，决定代码会编写在arduino，图形化界面(UI)会使用LVGL来生成。</p><p>未来一周会保持白天学习STM32直到定时器学习完毕，穿插学习使用LVGL的状态，并且希望能够在五月结束之前完成LVGL的学习，并且六月开始为期一周的arduino+Esp32的练习，希望此项目能够在暑假结束前完成。</p><p><a href="https://www.nologo.tech/product/esp32/esp32s3supermini/esp32S3SuperMini.html">模块厂商提供的相关学习链接</a></p><p>初步设想的实现功能:</p><ul><li><input checked disabled type="checkbox"> 长时间不使用进入深度睡眠模式,触摸启动,初次唤醒需要输入PIN值,且每次输入PIN值的键盘会打乱顺序,使得即使被他人监视输入的位置之后也不会被识别PIN值。</li><li><input disabled type="checkbox"> 支持USB输出账号密码及其它数据</li><li><input disabled type="checkbox"> U盘模式搭配KeePass（或其它兼容KeePass软件）实现浏览器自动填充</li><li><input disabled type="checkbox"> 支持FIDO2</li><li><input disabled type="checkbox"> 支持TOTP，Steam令牌</li><li><input disabled type="checkbox"> 安全启动，FLASH使用AES-256加密（U盘分区不加密，kdbx文件本身已经加密）</li><li><input disabled type="checkbox"> 支持存储NFC功能,能够存储校园卡里面的NFC信息</li></ul>]]></content>
     
     
       
