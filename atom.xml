@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-12T09:48:56.451Z</updated>
+  <updated>2024-06-27T15:16:12.199Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NFC产品设计</title>
+    <link href="http://example.com/2024/06/27/NFC%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/"/>
+    <id>http://example.com/2024/06/27/NFC%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/</id>
+    <published>2024-06-27T15:13:47.000Z</published>
+    <updated>2024-06-27T15:16:12.199Z</updated>
+    
+    <content type="html"><![CDATA[<p>根据芯片手册计算出线圈所需要的电感值，下列列表为参考</p><table><thead><tr><th align="center">C(pF)</th><th align="center">Lant(uH)@13.56MHz</th><th align="center">建议值(uH)</th></tr></thead><tbody><tr><td align="center">28.5</td><td align="center">4.5~4.7</td><td align="center">4.6</td></tr><tr><td align="center">50</td><td align="center">2.5~2.7</td><td align="center">2.6</td></tr><tr><td align="center">97</td><td align="center">1.2~1.4</td><td align="center">1.3</td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;根据芯片手册计算出线圈所需要的电感值，下列列表为参考&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;C(pF)&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Lant(uH)@13.56MHz&lt;/th&gt;
+&lt;th align=&quot;ce</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>待做产品</title>
