@@ -22,7 +22,7 @@
 
   
 
-  <title>message | Trace</title>
+  <title>江科大STM32零基础学习 | Trace</title>
 
   
 
@@ -50,7 +50,7 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
     <div class="post-image" style="background-image: url(https://github.com/Trace12364/Trace12364.github.io/blob/main/images/background.png?raw=true)"></div>
   
@@ -100,36 +100,178 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap">message</h1>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">江科大STM32零基础学习</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Trace</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2025-09-22T08:39:08.000Z" itemprop="datePublished">2025-09-22</time>
+          </h2>
+          
+          
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        
+        <h1 id="（一）驱动GPIO"><a href="#（一）驱动GPIO" class="headerlink" title="（一）驱动GPIO"></a>（一）驱动GPIO</h1><p>GPIO（General Purpose Input&#x2F;Output）是 STM32 最常用的功能模块。</p>
+<p>GPIO具有输入和输出两种模式，每种模式又具备四种工作模式，因此GPIO共有八种工作模式。输入模式可以配置为分为上拉输入、下拉输入、浮空输入和模拟输入；输出模式可以配置为开漏输出、推挽输出、复用推挽输出和复用开漏输出。下表是八种工作模式的介绍：</p>
+<table>
+<thead>
+<tr>
+<th>模式名称</th>
+<th>性质</th>
+<th>特征</th>
+<th>对应代码示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上拉输入</td>
+<td>输入</td>
+<td>内部上拉电阻，默认高电平，适合检测开关&#x2F;按键</td>
+<td><code>GPIO_Mode_IPU</code></td>
+</tr>
+<tr>
+<td>下拉输入</td>
+<td>输入</td>
+<td>内部下拉电阻，默认低电平，适合检测开关&#x2F;按键</td>
+<td><code>GPIO_Mode_IPD</code></td>
+</tr>
+<tr>
+<td>浮空输入</td>
+<td>输入</td>
+<td>无上下拉，状态不确定，需外部电路稳定电平</td>
+<td><code>GPIO_Mode_IN_FLOATING</code></td>
+</tr>
+<tr>
+<td>模拟输入</td>
+<td>输入</td>
+<td>输入到 ADC，功耗低，适合模拟信号采集</td>
+<td><code>GPIO_Mode_AIN</code></td>
+</tr>
+<tr>
+<td>推挽输出</td>
+<td>输出</td>
+<td>可输出高低电平，驱动能力强</td>
+<td><code>GPIO_Mode_Out_PP</code></td>
+</tr>
+<tr>
+<td>开漏输出</td>
+<td>输出</td>
+<td>只能输出低电平，高电平需外接上拉电阻，可用于I²C总线</td>
+<td><code>GPIO_Mode_Out_OD</code></td>
+</tr>
+<tr>
+<td>复用推挽输出</td>
+<td>输出</td>
+<td>用于片上外设（USART、SPI等），高速高驱动</td>
+<td><code>GPIO_Mode_AF_PP</code></td>
+</tr>
+<tr>
+<td>复用开漏输出</td>
+<td>输出</td>
+<td>与总线共享，可与外设共用，如I²C</td>
+<td><code>GPIO_Mode_AF_OD</code></td>
+</tr>
+</tbody></table>
+<h2 id="GPIO驱动流程（标准库方式）"><a href="#GPIO驱动流程（标准库方式）" class="headerlink" title="GPIO驱动流程（标准库方式）"></a>GPIO驱动流程（标准库方式）</h2><p>在使用标准库配置GPIO的工作模式时，需要先执行两个步骤：先初始化时钟，在配置对应的GPIO的工作模式</p>
+<h5 id="驱动代码"><a href="#驱动代码" class="headerlink" title="驱动代码"></a>驱动代码</h5><ol>
+<li><p><strong>使能时钟</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 使能 GPIOC 外设时钟，否则不能操作 GPIOC</span></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);　<span class="comment">//使能GPIOC所在的时钟</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>配置GPIO结构体（以PC13为例）</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2. 定义一个 GPIO 初始化结构体，用于配置 GPIO 引脚属性</span></span><br><span class="line">GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 选择 PC13 引脚（通常在开发板上接 LED）</span></span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 设置GPIO的工作模式</span></span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_PP;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 设置 GPIO 输出速度为 50MHz（输出切换速度）</span></span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 6. 调用库函数完成 GPIO 初始化</span></span><br><span class="line">GPIO_Init(GPIOC, &amp;GPIO_InitStructure);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="1-GPIO输出模式"><a href="#1-GPIO输出模式" class="headerlink" title="1.GPIO输出模式"></a>1.GPIO输出模式</h2><p>GPIO输入模式可以分为推挽输出、开漏输出以及复用推挽输出和复用开漏输出，推挽输出的驱动能力较强，可以输出高低电平，而开漏输出只能输出低电平，设置为高电平时为高阻态，因此开漏输出可以输出更高的电压，只需在外部接上拉电阻即可。</p>
+<h3 id="可驱动的外设"><a href="#可驱动的外设" class="headerlink" title="可驱动的外设"></a>可驱动的外设</h3><h4 id="LED："><a href="#LED：" class="headerlink" title="LED："></a>LED：</h4><p>常用推挽输出，直接点亮或熄灭 LED。</p>
+<h5 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化 LED 所在的 GPIO 引脚</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Init</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);</span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;</span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;</span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">    GPIO_Init(GPIOC, &amp;GPIO_InitStructure);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 点亮 LED</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_On</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 对 PC13 输出低电平，由于 LED 是低电平点亮，所以这里用 Reset</span></span><br><span class="line">    GPIO_ResetBits(GPIOC, GPIO_Pin_13);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 熄灭 LED</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">LED_Off</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 对 PC13 输出高电平，使 LED 熄灭</span></span><br><span class="line">    GPIO_SetBits(GPIOC, GPIO_Pin_13);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="蜂鸣器："><a href="#蜂鸣器：" class="headerlink" title="蜂鸣器："></a>蜂鸣器：</h4><h5 id="示例代码：-1"><a href="#示例代码：-1" class="headerlink" title="示例代码："></a>示例代码：</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 打开蜂鸣器</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Buzzer_On</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 对 PB5 输出高电平，驱动蜂鸣器响</span></span><br><span class="line">    GPIO_SetBits(GPIOB, GPIO_Pin_5);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 关闭蜂鸣器</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Buzzer_Off</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 对 PB5 输出低电平，关闭蜂鸣器</span></span><br><span class="line">    GPIO_ResetBits(GPIOB, GPIO_Pin_5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-GPIO输入模式"><a href="#2-GPIO输入模式" class="headerlink" title="2.GPIO输入模式"></a>2.GPIO输入模式</h2><p>GPIO的输入模式可以分为上拉输入、下拉输入、浮空输入和模拟输入，其中模拟输入用于检测端口的ADC数值，并将模拟数值转换为数字量给出，而上拉、下拉和浮空输入则是检测端口的高低电平，高电平为1，低电平为0。上拉输入默认输入为高电平，下拉输入默认输入为低电平。</p>
+<h3 id="可驱动的外设-1"><a href="#可驱动的外设-1" class="headerlink" title="可驱动的外设"></a>可驱动的外设</h3><h4 id="按键"><a href="#按键" class="headerlink" title="按键"></a>按键</h4><p>常见的输入设备，按下导通，松手断开，由于按键内部使用的是机械式弹簧来进行通断的，所以按下和松手时会有一连串的抖动。</p>
+<h5 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化按键 GPIO</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Key_Init</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 1. 使能 GPIOA 外设时钟（因为按键接在 PA0）</span></span><br><span class="line">    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 定义一个 GPIO 初始化结构体</span></span><br><span class="line">    GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3. 选择按键所在的引脚，这里是 PA0</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 4. 配置为上拉输入模式（内部上拉电阻，默认高电平）</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 5. 输入模式下，GPIO_Speed 参数无效，但必须赋值，习惯性填 50MHz</span></span><br><span class="line">    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 6. 调用库函数，完成 GPIOA 的初始化</span></span><br><span class="line">    GPIO_Init(GPIOA, &amp;GPIO_InitStructure);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="传感器模块"><a href="#传感器模块" class="headerlink" title="传感器模块"></a>传感器模块</h4><h4 id="相关驱动函数"><a href="#相关驱动函数" class="headerlink" title="相关驱动函数"></a>相关驱动函数</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
       </section>
 
       
       
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2024/06/27/NFC%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">NFC产品设计</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
 
-      
-      
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+    <div class="disqus-container comments-container content-padding--primary soft-size--large soft-style--box">
+      <p id="disqus_error" class="disqus-error" style="display: none;">如果你看不到评论，那么就真的看不到评论 w(゜Д゜)w</p>
+      <div id="disqus_thread" class="disqus-thread"></div>
+    </div>
+    <script type="text/javascript">
+      (function() {
+        var d = document, s = d.createElement('script'), c = d.querySelector(".disqus-container");
+        if (!c) return;
+        s.src = 'https://dreaeemer-github-io.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        s.onerror = () => {
+          document.querySelector("#disqus_error").style.display = "block";
+        }
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+  
+
+
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -166,6 +308,8 @@
     </div>
   </div>
 </section>
+
+      
 
       
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -211,7 +355,6 @@
     </div>
   </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">
